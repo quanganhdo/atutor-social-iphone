@@ -18,6 +18,10 @@
 		CDE2828711ABAB8B00A7F0EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE2828611ABAB8B00A7F0EE /* QuartzCore.framework */; };
 		CDE2832011ABAF5100A7F0EE /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */; };
 		CDE2834811ABB0A500A7F0EE /* StyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2834711ABB0A500A7F0EE /* StyleSheet.m */; };
+		CDE2836111ABB71F00A7F0EE /* Activities.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE2835D11ABB71F00A7F0EE /* Activities.png */; };
+		CDE2836211ABB71F00A7F0EE /* Contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE2835E11ABB71F00A7F0EE /* Contacts.png */; };
+		CDE2836311ABB71F00A7F0EE /* Gadgets.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE2835F11ABB71F00A7F0EE /* Gadgets.png */; };
+		CDE2836411ABB71F00A7F0EE /* Groups.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE2836011ABB71F00A7F0EE /* Groups.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,10 @@
 		CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewController.m; sourceTree = "<group>"; };
 		CDE2834611ABB0A500A7F0EE /* StyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleSheet.h; sourceTree = "<group>"; };
 		CDE2834711ABB0A500A7F0EE /* StyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleSheet.m; sourceTree = "<group>"; };
+		CDE2835D11ABB71F00A7F0EE /* Activities.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Activities.png; sourceTree = "<group>"; };
+		CDE2835E11ABB71F00A7F0EE /* Contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Contacts.png; sourceTree = "<group>"; };
+		CDE2835F11ABB71F00A7F0EE /* Gadgets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gadgets.png; sourceTree = "<group>"; };
+		CDE2836011ABB71F00A7F0EE /* Groups.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Groups.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CDE2835B11ABB70100A7F0EE /* Graphics */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* ATutor-Info.plist */,
 			);
@@ -175,6 +184,25 @@
 				CDE2834711ABB0A500A7F0EE /* StyleSheet.m */,
 			);
 			name = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		CDE2835B11ABB70100A7F0EE /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				CDE2835C11ABB70500A7F0EE /* Launcher Icons */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		CDE2835C11ABB70500A7F0EE /* Launcher Icons */ = {
+			isa = PBXGroup;
+			children = (
+				CDE2835D11ABB71F00A7F0EE /* Activities.png */,
+				CDE2835E11ABB71F00A7F0EE /* Contacts.png */,
+				CDE2835F11ABB71F00A7F0EE /* Gadgets.png */,
+				CDE2836011ABB71F00A7F0EE /* Groups.png */,
+			);
+			name = "Launcher Icons";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +273,10 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				CDE2823611ABAB6B00A7F0EE /* Three20.bundle in Resources */,
+				CDE2836111ABB71F00A7F0EE /* Activities.png in Resources */,
+				CDE2836211ABB71F00A7F0EE /* Contacts.png in Resources */,
+				CDE2836311ABB71F00A7F0EE /* Gadgets.png in Resources */,
+				CDE2836411ABB71F00A7F0EE /* Groups.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

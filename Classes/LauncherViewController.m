@@ -42,7 +42,7 @@
 	
 	for (NSString *module in [NSArray arrayWithObjects:@"Activities", @"Contacts", @"Gadgets", @"Groups", nil]) {
 		[launcherView addItem:[[[TTLauncherItem alloc] initWithTitle:module 
-															   image:nil
+															   image:[NSString stringWithFormat:@"bundle://%@.png", module]
 																 URL:[NSString stringWithFormat:@"atutor://modules/%@", module] 
 														   canDelete:NO] autorelease] 
 					 animated:NO];

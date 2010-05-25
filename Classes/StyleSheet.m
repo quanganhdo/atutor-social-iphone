@@ -11,7 +11,6 @@
 
 @implementation StyleSheet
 
-// Customize launcher button's style
 - (TTStyle*)launcherButton:(UIControlState)state {
 	return
     [TTPartStyle styleWithName:@"image" style:TTSTYLESTATE(launcherButtonImage:, state) next:
