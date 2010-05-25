@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Three20/Three20.h>
 
-@interface LauncherViewController : UIViewController <TTLauncherViewDelegate> {
+@interface LauncherViewController : TTViewController <TTLauncherViewDelegate> {
 	TTLauncherView *launcherView;
 }
+
+@property (nonatomic, retain) TTLauncherView *launcherView;
 
 @end
