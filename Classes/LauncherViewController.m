@@ -44,18 +44,7 @@
 	launcherView.columnCount = 2;
 	
 	// Attempt to restore data if exists
-	NSData *pages = [[NSUserDefaults standardUserDefaults] objectForKey:@"launcher.pages"];
-	if (pages != nil) {
-		launcherView.pages = [NSKeyedUnarchiver unarchiveObjectWithData:pages];
-	} else {
-		for (NSString *module in [NSArray arrayWithObjects:@"Activities", @"Contacts", @"Gadgets", @"Groups", nil]) {
-			[launcherView addItem:[[[TTLauncherItem alloc] initWithTitle:module 
-																   image:[NSString stringWithFormat:@"bundle://%@.png", module]
-																	 URL:[NSString stringWithFormat:@"atutor://modules/%@", module] 
-															   canDelete:NO] autorelease] 
-						 animated:NO];
-		}
-	}
+	[self restorePages];
 	
 	[self.view addSubview:launcherView];
 }
@@ -83,6 +72,24 @@
 	// Persist data the ugly way
 	NSData *pages = [NSKeyedArchiver archivedDataWithRootObject:launcherView.pages];
 	[[NSUserDefaults standardUserDefaults] setObject:pages forKey:@"launcher.pages"];
+}
+
+#pragma mark -
+#pragma mark Misc
+
+- (void)restorePages {
+	NSData *pages = [[NSUserDefaults standardUserDefaults] objectForKey:@"launcher.pages"];
+	if (pages != nil) {
+		launcherView.pages = [NSKeyedUnarchiver unarchiveObjectWithData:pages];
+	} else {
+		for (NSString *module in [NSArray arrayWithObjects:@"Activities", @"Contacts", @"Gadgets", @"Groups", nil]) {
+			[launcherView addItem:[[[TTLauncherItem alloc] initWithTitle:module 
+																   image:[NSString stringWithFormat:@"bundle://%@.png", module]
+																	 URL:[NSString stringWithFormat:@"atutor://modules/%@", module] 
+															   canDelete:NO] autorelease] 
+						 animated:NO];
+		}
+	}
 }
 
 @end

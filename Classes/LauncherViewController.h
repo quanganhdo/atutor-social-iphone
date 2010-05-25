@@ -15,4 +15,6 @@
 
 @property (nonatomic, retain) TTLauncherView *launcherView;
 
+- (void)restorePages;
+
 @end
