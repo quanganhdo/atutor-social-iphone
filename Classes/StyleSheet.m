@@ -19,4 +19,12 @@
 				   shadowOffset:CGSizeZero next:nil]];
 }
 
+- (TTStyle*)launcherPageDot:(UIControlState)state {
+	if (state != UIControlStateSelected) {
+		return [self pageDotWithColor:[UIColor whiteColor]];
+	} else {
+		return [self pageDotWithColor:[UIColor colorWithRed:0.227 green:0.455 blue:0.647 alpha:1.000]];
+	}
+}
+
 @end
