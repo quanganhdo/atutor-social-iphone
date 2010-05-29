@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <Three20/Three20.h>
 
+@class OSConsumer;
+
 @interface ATutorAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
+	OSConsumer *consumer;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) OSConsumer *consumer;
 
 @end
 

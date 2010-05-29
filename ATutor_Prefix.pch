@@ -6,3 +6,9 @@
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
 #endif
+
+// Service name
+#define kATutor @"atutor"
+
+#define kConsumerKey @"key"
+#define kConsumerSecret @"secret"

@@ -7,7 +7,8 @@
 //
 
 #import "LauncherViewController.h"
-
+#import "ATutorAppDelegate.h"
+#import "OSConsumer.h"
 
 @implementation LauncherViewController
 
@@ -72,6 +73,10 @@
 	// Persist data the ugly way
 	NSData *pages = [NSKeyedArchiver archivedDataWithRootObject:launcherView.pages];
 	[[NSUserDefaults standardUserDefaults] setObject:pages forKey:@"launcher.pages"];
+}
+
+- (void)launcherView:(TTLauncherView*)launcher didSelectItem:(TTLauncherItem*)item {
+	[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] startAuthProcess];
 }
 
 #pragma mark -

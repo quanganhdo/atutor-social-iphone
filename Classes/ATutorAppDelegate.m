@@ -9,13 +9,17 @@
 #import "ATutorAppDelegate.h"
 #import "LauncherViewController.h"
 #import "StyleSheet.h"
+#import "OSConsumer.h"
 
 @implementation ATutorAppDelegate
 
 @synthesize window;
-
+@synthesize consumer;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+	// Set service consumer
+	consumer = [[OSConsumer alloc] init];
+	
 	// Set global stylesheet
 	[TTDefaultStyleSheet setGlobalStyleSheet:[[[StyleSheet alloc] init] autorelease]];	
 	
@@ -39,8 +43,22 @@
 
 - (void)dealloc {
     [window release];
+	[consumer release];
+	
     [super dealloc];
 }
 
+#pragma mark -
+#pragma mark Misc
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+	// We have been called back by a successful OAuth token grant
+	// Now we need to fetch the access token
+	NSLog(@"Handling URL: %@", url);
+	
+	[consumer finishAuthProcess];
+	
+	return YES;
+}
 
 @end
