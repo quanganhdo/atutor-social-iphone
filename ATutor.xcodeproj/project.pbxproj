@@ -13,6 +13,32 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		CD90256E11B0C0B500519439 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90253411B0C0B500519439 /* SFHFKeychainUtils.m */; };
+		CD90256F11B0C0B500519439 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = CD90253711B0C0B500519439 /* Base64Transcoder.c */; };
+		CD90257011B0C0B500519439 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = CD90253911B0C0B500519439 /* hmac.c */; };
+		CD90257111B0C0B500519439 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = CD90253B11B0C0B500519439 /* sha1.c */; };
+		CD90257211B0C0B500519439 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90253F11B0C0B500519439 /* NSString+URLEncoding.m */; };
+		CD90257311B0C0B500519439 /* OAAsynchronousDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90254111B0C0B500519439 /* OAAsynchronousDataFetcher.m */; };
+		CD90257411B0C0B500519439 /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90254311B0C0B500519439 /* OAConsumer.m */; };
+		CD90257511B0C0B500519439 /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90254511B0C0B500519439 /* OADataFetcher.m */; };
+		CD90257611B0C0B500519439 /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90254711B0C0B500519439 /* OAMutableURLRequest.m */; };
+		CD90257711B0C0B500519439 /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90254911B0C0B500519439 /* OARequestParameter.m */; };
+		CD90257811B0C0B500519439 /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90254B11B0C0B500519439 /* OAServiceTicket.m */; };
+		CD90257911B0C0B500519439 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90254D11B0C0B500519439 /* OAToken.m */; };
+		CD90257A11B0C0B500519439 /* OAToken_KeychainExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90254F11B0C0B500519439 /* OAToken_KeychainExtensions.m */; };
+		CD90257B11B0C0B500519439 /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90255211B0C0B500519439 /* OAHMAC_SHA1SignatureProvider.m */; };
+		CD90257C11B0C0B500519439 /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90255411B0C0B500519439 /* OAPlaintextSignatureProvider.m */; };
+		CD90257D11B0C0B500519439 /* OpenSocialConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90255811B0C0B500519439 /* OpenSocialConsumer.m */; };
+		CD90257E11B0C0B500519439 /* OpenSocialProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90255A11B0C0B500519439 /* OpenSocialProvider.m */; };
+		CD90257F11B0C0B500519439 /* ProviderListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90255C11B0C0B500519439 /* ProviderListController.m */; };
+		CD90258011B0C0B500519439 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90255F11B0C0B500519439 /* CDataScanner.m */; };
+		CD90258111B0C0B500519439 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90256211B0C0B500519439 /* CDataScanner_Extensions.m */; };
+		CD90258211B0C0B500519439 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90256411B0C0B500519439 /* NSCharacterSet_Extensions.m */; };
+		CD90258311B0C0B500519439 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90256611B0C0B500519439 /* NSDictionary_JSONExtensions.m */; };
+		CD90258411B0C0B500519439 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90256911B0C0B500519439 /* CJSONDeserializer.m */; };
+		CD90258511B0C0B500519439 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90256B11B0C0B500519439 /* CJSONScanner.m */; };
+		CD90258611B0C0B500519439 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90256D11B0C0B500519439 /* CJSONSerializer.m */; };
+		CD9025D911B1438600519439 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9025D811B1438600519439 /* Security.framework */; };
 		CDE2828711ABAB8B00A7F0EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE2828611ABAB8B00A7F0EE /* QuartzCore.framework */; };
 		CDE2832011ABAF5100A7F0EE /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */; };
 		CDE2834811ABB0A500A7F0EE /* StyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2834711ABB0A500A7F0EE /* StyleSheet.m */; };
@@ -59,6 +85,58 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ATutor_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATutor_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ATutor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ATutor-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CD90253311B0C0B500519439 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		CD90253411B0C0B500519439 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		CD90253711B0C0B500519439 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		CD90253811B0C0B500519439 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		CD90253911B0C0B500519439 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		CD90253A11B0C0B500519439 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		CD90253B11B0C0B500519439 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		CD90253C11B0C0B500519439 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		CD90253E11B0C0B500519439 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		CD90253F11B0C0B500519439 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		CD90254011B0C0B500519439 /* OAAsynchronousDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAAsynchronousDataFetcher.h; sourceTree = "<group>"; };
+		CD90254111B0C0B500519439 /* OAAsynchronousDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAAsynchronousDataFetcher.m; sourceTree = "<group>"; };
+		CD90254211B0C0B500519439 /* OAConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAConsumer.h; sourceTree = "<group>"; };
+		CD90254311B0C0B500519439 /* OAConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAConsumer.m; sourceTree = "<group>"; };
+		CD90254411B0C0B500519439 /* OADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OADataFetcher.h; sourceTree = "<group>"; };
+		CD90254511B0C0B500519439 /* OADataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OADataFetcher.m; sourceTree = "<group>"; };
+		CD90254611B0C0B500519439 /* OAMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAMutableURLRequest.h; sourceTree = "<group>"; };
+		CD90254711B0C0B500519439 /* OAMutableURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAMutableURLRequest.m; sourceTree = "<group>"; };
+		CD90254811B0C0B500519439 /* OARequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OARequestParameter.h; sourceTree = "<group>"; };
+		CD90254911B0C0B500519439 /* OARequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OARequestParameter.m; sourceTree = "<group>"; };
+		CD90254A11B0C0B500519439 /* OAServiceTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAServiceTicket.h; sourceTree = "<group>"; };
+		CD90254B11B0C0B500519439 /* OAServiceTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAServiceTicket.m; sourceTree = "<group>"; };
+		CD90254C11B0C0B500519439 /* OAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken.h; sourceTree = "<group>"; };
+		CD90254D11B0C0B500519439 /* OAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAToken.m; sourceTree = "<group>"; };
+		CD90254E11B0C0B500519439 /* OAToken_KeychainExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken_KeychainExtensions.h; sourceTree = "<group>"; };
+		CD90254F11B0C0B500519439 /* OAToken_KeychainExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAToken_KeychainExtensions.m; sourceTree = "<group>"; };
+		CD90255111B0C0B500519439 /* OAHMAC_SHA1SignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAHMAC_SHA1SignatureProvider.h; sourceTree = "<group>"; };
+		CD90255211B0C0B500519439 /* OAHMAC_SHA1SignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAHMAC_SHA1SignatureProvider.m; sourceTree = "<group>"; };
+		CD90255311B0C0B500519439 /* OAPlaintextSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAPlaintextSignatureProvider.h; sourceTree = "<group>"; };
+		CD90255411B0C0B500519439 /* OAPlaintextSignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAPlaintextSignatureProvider.m; sourceTree = "<group>"; };
+		CD90255511B0C0B500519439 /* OASignatureProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OASignatureProviding.h; sourceTree = "<group>"; };
+		CD90255711B0C0B500519439 /* OpenSocialConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSocialConsumer.h; sourceTree = "<group>"; };
+		CD90255811B0C0B500519439 /* OpenSocialConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSocialConsumer.m; sourceTree = "<group>"; };
+		CD90255911B0C0B500519439 /* OpenSocialProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSocialProvider.h; sourceTree = "<group>"; };
+		CD90255A11B0C0B500519439 /* OpenSocialProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSocialProvider.m; sourceTree = "<group>"; };
+		CD90255B11B0C0B500519439 /* ProviderListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderListController.h; sourceTree = "<group>"; };
+		CD90255C11B0C0B500519439 /* ProviderListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderListController.m; sourceTree = "<group>"; };
+		CD90255E11B0C0B500519439 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		CD90255F11B0C0B500519439 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		CD90256111B0C0B500519439 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		CD90256211B0C0B500519439 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		CD90256311B0C0B500519439 /* NSCharacterSet_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCharacterSet_Extensions.h; sourceTree = "<group>"; };
+		CD90256411B0C0B500519439 /* NSCharacterSet_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCharacterSet_Extensions.m; sourceTree = "<group>"; };
+		CD90256511B0C0B500519439 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		CD90256611B0C0B500519439 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		CD90256811B0C0B500519439 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		CD90256911B0C0B500519439 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		CD90256A11B0C0B500519439 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		CD90256B11B0C0B500519439 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		CD90256C11B0C0B500519439 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		CD90256D11B0C0B500519439 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		CD9025D811B1438600519439 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		CDE2828611ABAB8B00A7F0EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CDE2831E11ABAF5100A7F0EE /* LauncherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewController.h; sourceTree = "<group>"; };
 		CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewController.m; sourceTree = "<group>"; };
@@ -82,6 +160,7 @@
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				CDE2828711ABAB8B00A7F0EE /* QuartzCore.framework in Frameworks */,
 				CDE283E111ABBCF200A7F0EE /* libThree20.a in Frameworks */,
+				CD9025D911B1438600519439 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +201,10 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CD90253211B0C0B500519439 /* KeychainUtils */,
+				CD90253511B0C0B500519439 /* OAuth */,
+				CD90255611B0C0B500519439 /* OpenSocial */,
+				CD90255D11B0C0B500519439 /* TouchJSON */,
 				CDE2822A11ABAB4D00A7F0EE /* three20 */,
 				32CA4F630368D1EE00C91783 /* ATutor_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
@@ -142,12 +225,132 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD9025D811B1438600519439 /* Security.framework */,
 				CDE2828611ABAB8B00A7F0EE /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD90253211B0C0B500519439 /* KeychainUtils */ = {
+			isa = PBXGroup;
+			children = (
+				CD90253311B0C0B500519439 /* SFHFKeychainUtils.h */,
+				CD90253411B0C0B500519439 /* SFHFKeychainUtils.m */,
+			);
+			path = KeychainUtils;
+			sourceTree = "<group>";
+		};
+		CD90253511B0C0B500519439 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				CD90253611B0C0B500519439 /* Crypto */,
+				CD90253D11B0C0B500519439 /* Extensions */,
+				CD90254011B0C0B500519439 /* OAAsynchronousDataFetcher.h */,
+				CD90254111B0C0B500519439 /* OAAsynchronousDataFetcher.m */,
+				CD90254211B0C0B500519439 /* OAConsumer.h */,
+				CD90254311B0C0B500519439 /* OAConsumer.m */,
+				CD90254411B0C0B500519439 /* OADataFetcher.h */,
+				CD90254511B0C0B500519439 /* OADataFetcher.m */,
+				CD90254611B0C0B500519439 /* OAMutableURLRequest.h */,
+				CD90254711B0C0B500519439 /* OAMutableURLRequest.m */,
+				CD90254811B0C0B500519439 /* OARequestParameter.h */,
+				CD90254911B0C0B500519439 /* OARequestParameter.m */,
+				CD90254A11B0C0B500519439 /* OAServiceTicket.h */,
+				CD90254B11B0C0B500519439 /* OAServiceTicket.m */,
+				CD90254C11B0C0B500519439 /* OAToken.h */,
+				CD90254D11B0C0B500519439 /* OAToken.m */,
+				CD90254E11B0C0B500519439 /* OAToken_KeychainExtensions.h */,
+				CD90254F11B0C0B500519439 /* OAToken_KeychainExtensions.m */,
+				CD90255011B0C0B500519439 /* Signature Providers */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		CD90253611B0C0B500519439 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				CD90253711B0C0B500519439 /* Base64Transcoder.c */,
+				CD90253811B0C0B500519439 /* Base64Transcoder.h */,
+				CD90253911B0C0B500519439 /* hmac.c */,
+				CD90253A11B0C0B500519439 /* hmac.h */,
+				CD90253B11B0C0B500519439 /* sha1.c */,
+				CD90253C11B0C0B500519439 /* sha1.h */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		CD90253D11B0C0B500519439 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD90253E11B0C0B500519439 /* NSString+URLEncoding.h */,
+				CD90253F11B0C0B500519439 /* NSString+URLEncoding.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CD90255011B0C0B500519439 /* Signature Providers */ = {
+			isa = PBXGroup;
+			children = (
+				CD90255111B0C0B500519439 /* OAHMAC_SHA1SignatureProvider.h */,
+				CD90255211B0C0B500519439 /* OAHMAC_SHA1SignatureProvider.m */,
+				CD90255311B0C0B500519439 /* OAPlaintextSignatureProvider.h */,
+				CD90255411B0C0B500519439 /* OAPlaintextSignatureProvider.m */,
+				CD90255511B0C0B500519439 /* OASignatureProviding.h */,
+			);
+			path = "Signature Providers";
+			sourceTree = "<group>";
+		};
+		CD90255611B0C0B500519439 /* OpenSocial */ = {
+			isa = PBXGroup;
+			children = (
+				CD90255711B0C0B500519439 /* OpenSocialConsumer.h */,
+				CD90255811B0C0B500519439 /* OpenSocialConsumer.m */,
+				CD90255911B0C0B500519439 /* OpenSocialProvider.h */,
+				CD90255A11B0C0B500519439 /* OpenSocialProvider.m */,
+				CD90255B11B0C0B500519439 /* ProviderListController.h */,
+				CD90255C11B0C0B500519439 /* ProviderListController.m */,
+			);
+			path = OpenSocial;
+			sourceTree = "<group>";
+		};
+		CD90255D11B0C0B500519439 /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				CD90255E11B0C0B500519439 /* CDataScanner.h */,
+				CD90255F11B0C0B500519439 /* CDataScanner.m */,
+				CD90256011B0C0B500519439 /* Extensions */,
+				CD90256711B0C0B500519439 /* JSON */,
+			);
+			path = TouchJSON;
+			sourceTree = "<group>";
+		};
+		CD90256011B0C0B500519439 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD90256111B0C0B500519439 /* CDataScanner_Extensions.h */,
+				CD90256211B0C0B500519439 /* CDataScanner_Extensions.m */,
+				CD90256311B0C0B500519439 /* NSCharacterSet_Extensions.h */,
+				CD90256411B0C0B500519439 /* NSCharacterSet_Extensions.m */,
+				CD90256511B0C0B500519439 /* NSDictionary_JSONExtensions.h */,
+				CD90256611B0C0B500519439 /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CD90256711B0C0B500519439 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				CD90256811B0C0B500519439 /* CJSONDeserializer.h */,
+				CD90256911B0C0B500519439 /* CJSONDeserializer.m */,
+				CD90256A11B0C0B500519439 /* CJSONScanner.h */,
+				CD90256B11B0C0B500519439 /* CJSONScanner.m */,
+				CD90256C11B0C0B500519439 /* CJSONSerializer.h */,
+				CD90256D11B0C0B500519439 /* CJSONSerializer.m */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		CDE2822A11ABAB4D00A7F0EE /* three20 */ = {
@@ -291,6 +494,31 @@
 				1D3623260D0F684500981E51 /* ATutorAppDelegate.m in Sources */,
 				CDE2832011ABAF5100A7F0EE /* LauncherViewController.m in Sources */,
 				CDE2834811ABB0A500A7F0EE /* StyleSheet.m in Sources */,
+				CD90256E11B0C0B500519439 /* SFHFKeychainUtils.m in Sources */,
+				CD90256F11B0C0B500519439 /* Base64Transcoder.c in Sources */,
+				CD90257011B0C0B500519439 /* hmac.c in Sources */,
+				CD90257111B0C0B500519439 /* sha1.c in Sources */,
+				CD90257211B0C0B500519439 /* NSString+URLEncoding.m in Sources */,
+				CD90257311B0C0B500519439 /* OAAsynchronousDataFetcher.m in Sources */,
+				CD90257411B0C0B500519439 /* OAConsumer.m in Sources */,
+				CD90257511B0C0B500519439 /* OADataFetcher.m in Sources */,
+				CD90257611B0C0B500519439 /* OAMutableURLRequest.m in Sources */,
+				CD90257711B0C0B500519439 /* OARequestParameter.m in Sources */,
+				CD90257811B0C0B500519439 /* OAServiceTicket.m in Sources */,
+				CD90257911B0C0B500519439 /* OAToken.m in Sources */,
+				CD90257A11B0C0B500519439 /* OAToken_KeychainExtensions.m in Sources */,
+				CD90257B11B0C0B500519439 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
+				CD90257C11B0C0B500519439 /* OAPlaintextSignatureProvider.m in Sources */,
+				CD90257D11B0C0B500519439 /* OpenSocialConsumer.m in Sources */,
+				CD90257E11B0C0B500519439 /* OpenSocialProvider.m in Sources */,
+				CD90257F11B0C0B500519439 /* ProviderListController.m in Sources */,
+				CD90258011B0C0B500519439 /* CDataScanner.m in Sources */,
+				CD90258111B0C0B500519439 /* CDataScanner_Extensions.m in Sources */,
+				CD90258211B0C0B500519439 /* NSCharacterSet_Extensions.m in Sources */,
+				CD90258311B0C0B500519439 /* NSDictionary_JSONExtensions.m in Sources */,
+				CD90258411B0C0B500519439 /* CJSONDeserializer.m in Sources */,
+				CD90258511B0C0B500519439 /* CJSONScanner.m in Sources */,
+				CD90258611B0C0B500519439 /* CJSONSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
