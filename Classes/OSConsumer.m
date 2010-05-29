@@ -110,7 +110,7 @@
 	if (ticket.didSucceed) {
 		NSLog(@"%@", response);
 		OAToken *requestToken = [[OAToken alloc] initWithHTTPResponseBody:response];
-		[requestToken storeInDefaultKeychainWithAppName:@"opensocial-demo" tokenType:@"requestToken"];    
+		[requestToken storeInDefaultKeychainWithAppName:kATutor tokenType:@"requestToken"];    
 		NSLog(@"Stored this secret and key: %@ : %@", [requestToken key], [requestToken secret]);
 		
 		NSString *urlString = [NSString stringWithFormat:@"%@?oauth_callback=%@://&oauth_token=%@", 
