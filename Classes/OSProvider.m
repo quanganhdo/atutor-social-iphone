@@ -33,7 +33,7 @@
 	atutor.accessUrl = @"http://localhost:8888/atutor/docs/mods/_standard/social/lib/oauth/access_token.php";
 	atutor.endpointUrl = @"http://localhost:8888/shindig/php/social/rest";
 	
-	atutor.isOpenSocial = FALSE;
+	atutor.isOpenSocial = YES;
 	
 	atutor.consumerKey = key;
 	atutor.consumerSecret = secret;
