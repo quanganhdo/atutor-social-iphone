@@ -13,13 +13,11 @@
 @class OAToken;
 
 @interface OSConsumer : NSObject {
-	NSString *callbackScheme;	
 	OAConsumer *consumer;	
 	OAToken *accessToken;
 	OSProvider *currentProvider;
 }
 
-@property (nonatomic, copy) NSString *callbackScheme;
 @property (nonatomic, retain) OAToken *accessToken;
 @property (nonatomic, retain) OAConsumer *consumer;
 @property (nonatomic, retain) OSProvider *currentProvider;

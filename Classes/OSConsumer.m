@@ -26,10 +26,9 @@
 
 @implementation OSConsumer
 
-@synthesize callbackScheme, consumer, accessToken, currentProvider;
+@synthesize consumer, accessToken, currentProvider;
 
 - (void)dealloc {
-	[callbackScheme release];
 	[consumer release];
 	[accessToken release];
 	[currentProvider release];
@@ -39,7 +38,6 @@
 
 - (id)init {
 	if (self = [super init]) {
-		self.callbackScheme = kATutor;
 		self.accessToken = [[[OAToken alloc] initWithKeychainUsingAppName:kATutor tokenType:@"accessToken"] autorelease];
 		self.currentProvider = [OSProvider getATutorProviderWithKey:kConsumerKey withSecret:kConsumerSecret];
 		
@@ -113,8 +111,8 @@
 		[requestToken storeInDefaultKeychainWithAppName:kATutor tokenType:@"requestToken"];    
 		NSLog(@"Stored this secret and key: %@ : %@", [requestToken key], [requestToken secret]);
 		
-		NSString *urlString = [NSString stringWithFormat:@"%@?oauth_callback=%@://&oauth_token=%@", 
-							   [currentProvider authorizeUrl], callbackScheme, [requestToken key]];
+		NSString *urlString = [NSString stringWithFormat:@"%@?oauth_callback=atutor://launcher/oauth_token=%@", 
+							   [currentProvider authorizeUrl], [requestToken key]];
 		
 		NSLog(@"Request string: %@", urlString);
 		
