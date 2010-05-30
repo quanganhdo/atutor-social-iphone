@@ -17,4 +17,6 @@ void alertMessage(NSString *title, NSString *message);
 BOOL dataSourceAvailable();
 NSString *applicationDocumentsDirectory();
 
+BOOL isLoggedIn();
+
 @end

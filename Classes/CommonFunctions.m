@@ -9,6 +9,7 @@
 #import "CommonFunctions.h"
 
 #import <SystemConfiguration/SystemConfiguration.h>
+#import "SFHFKeychainUtils.h"
 
 @implementation CommonFunctions
 
@@ -35,6 +36,11 @@ BOOL dataSourceAvailable() {
 
 NSString *applicationDocumentsDirectory() {
 	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+BOOL isLoggedIn() {
+	return ![[SFHFKeychainUtils getPasswordForUsername:@"accessToken" andServiceName:kATutor error:nil] isEqualToString:@""] 
+	&& ![[SFHFKeychainUtils getPasswordForUsername:@"requestToken" andServiceName:kATutor error:nil] isEqualToString:@""];
 }
 
 @end

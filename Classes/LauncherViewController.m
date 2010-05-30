@@ -13,16 +13,41 @@
 #import "NSDictionary_JSONExtensions.h"
 #import "CommonFunctions.h"
 
+@interface LauncherViewController (Private)
+
+- (void)logout;
+
+@end
+
 @implementation LauncherViewController
 
 @synthesize launcherView;
+@synthesize logoutButton;
 
 - (id)init {
 	if (self = [super init]) {
-		self.title = @"ATutor Social";
+		
 	}
 	
 	return self;
+}
+
+- (void)dealloc {
+	[launcherView release];
+	[logoutButton release];
+	
+    [super dealloc];
+}
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	
+	logoutButton = [[UIBarButtonItem alloc] initWithTitle:TTLocalizedString(@"Logout", @"") 
+													style:UIBarButtonItemStyleBordered 
+												   target:self action:@selector(logout)];
+	
+	self.title = TTLocalizedString(@"ATutor Social", @"");
+	self.navigationItem.rightBarButtonItem = logoutButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,13 +78,6 @@
 	[self.view addSubview:launcherView];
 }
 
-
-- (void)dealloc {
-	[launcherView release];
-	
-    [super dealloc];
-}
-
 #pragma mark -
 #pragma mark TTLauncherViewDelegate
 
@@ -71,7 +89,7 @@
 }
 
 - (void)launcherViewDidEndEditing:(TTLauncherView*)launcher {
-	[self.navigationItem setRightBarButtonItem:nil animated:YES];
+	[self.navigationItem setRightBarButtonItem:logoutButton animated:YES];
 
 	// Persist data the ugly way
 	NSData *pages = [NSKeyedArchiver archivedDataWithRootObject:launcherView.pages];
@@ -79,7 +97,8 @@
 }
 
 - (void)launcherView:(TTLauncherView*)launcher didSelectItem:(TTLauncherItem*)item {
-	if ([item.title isEqualToString:@"Activities"]) {
+	if ([item.title isEqualToString:TTLocalizedString(@"Activities", @"")]) {
+#warning TODO: Move this to ATutorHelper
 		[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] getDataForUrl:@"/activities/@supportedFields" 
 																			   andParameters:nil 
 																					delegate:self 
@@ -98,10 +117,6 @@
 	[self.navigationController popViewControllerAnimated:YES];
 	
 	[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] finishAuthProcess];
-	[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] getDataForUrl:@"/activities/@supportedFields" 
-																		   andParameters:nil 
-																				delegate:self 
-																	   didFinishSelector:@selector(activitiesCallback:didFinishWithResponse:)];
 }
 
 #pragma mark -
@@ -113,13 +128,19 @@
 		launcherView.pages = [NSKeyedUnarchiver unarchiveObjectWithData:pages];
 	} else {
 		for (NSString *module in [NSArray arrayWithObjects:@"Activities", @"Contacts", @"Gadgets", @"Groups", nil]) {
-			[launcherView addItem:[[[TTLauncherItem alloc] initWithTitle:module 
+			[launcherView addItem:[[[TTLauncherItem alloc] initWithTitle:TTLocalizedString(module, @"") 
 																   image:[NSString stringWithFormat:@"bundle://%@.png", module]
 																	 URL:[NSString stringWithFormat:@"atutor://modules/%@", module] 
 															   canDelete:NO] autorelease] 
 						 animated:NO];
 		}
 	}
+}
+
+- (void)logout {
+	[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] clearAuthentication];
+	
+	NSLog(@"You have been logged out");
 }
 
 @end

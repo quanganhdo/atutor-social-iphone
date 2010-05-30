@@ -12,9 +12,11 @@
 
 @interface LauncherViewController : TTViewController <TTLauncherViewDelegate, QAWebControllerDelegate> {
 	TTLauncherView *launcherView;
+	UIBarButtonItem *logoutButton;
 }
 
 @property (nonatomic, retain) TTLauncherView *launcherView;
+@property (nonatomic, retain) UIBarButtonItem *logoutButton;
 
 - (void)restorePages;
 
