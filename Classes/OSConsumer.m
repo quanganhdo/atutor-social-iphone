@@ -15,6 +15,7 @@
 #import "OADataFetcher.h"
 #import "OAToken.h"
 #import "OAToken_KeychainExtensions.h"
+#import <Three20/Three20.h>
 
 @interface OSConsumer (Private)
 - (void)setupConsumer;
@@ -111,13 +112,12 @@
 		[requestToken storeInDefaultKeychainWithAppName:kATutor tokenType:@"requestToken"];    
 		NSLog(@"Stored this secret and key: %@ : %@", [requestToken key], [requestToken secret]);
 		
-		NSString *urlString = [NSString stringWithFormat:@"%@?oauth_callback=atutor://launcher/oauth_token=%@", 
+		NSString *urlString = [NSString stringWithFormat:@"%@?oauth_callback=internal://finish-auth&oauth_token=%@", 
 							   [currentProvider authorizeUrl], [requestToken key]];
 		
 		NSLog(@"Request string: %@", urlString);
 		
-		NSURL *url = [NSURL URLWithString:urlString];
-		[[UIApplication sharedApplication] openURL:url];
+		[[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:urlString]];
 	} else {
 		NSString *error = [NSString stringWithFormat:@"Got error while requesting request token. %@", response];
 		NSLog(@"Error retriving request token: %@", error);

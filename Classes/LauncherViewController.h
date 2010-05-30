@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Three20/Three20.h>
+#import "QAWebController.h"
 
-@interface LauncherViewController : TTViewController <TTLauncherViewDelegate> {
+@interface LauncherViewController : TTViewController <TTLauncherViewDelegate, QAWebControllerDelegate> {
 	TTLauncherView *launcherView;
 }
 

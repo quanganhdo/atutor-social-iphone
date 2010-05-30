@@ -9,6 +9,9 @@
 #import "LauncherViewController.h"
 #import "ATutorAppDelegate.h"
 #import "OSConsumer.h"
+#import "OAServiceTicket.h"
+#import "NSDictionary_JSONExtensions.h"
+#import "CommonFunctions.h"
 
 @implementation LauncherViewController
 
@@ -76,7 +79,29 @@
 }
 
 - (void)launcherView:(TTLauncherView*)launcher didSelectItem:(TTLauncherItem*)item {
-	[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] startAuthProcess];
+	if ([item.title isEqualToString:@"Activities"]) {
+		[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] getDataForUrl:@"/activities/@supportedFields" 
+																			   andParameters:nil 
+																					delegate:self 
+																		   didFinishSelector:@selector(activitiesCallback:didFinishWithResponse:)];
+	}
+}
+
+- (void)activitiesCallback:(OAServiceTicket *)ticket didFinishWithResponse:(id)response {
+	alertMessage(@"Response", response);
+}
+
+#pragma mark -
+#pragma mark QAWebControllerDelegate
+
+- (void)didFinishAuthorizationInWebViewController:(QAWebController *)webViewController {
+	[self.navigationController popViewControllerAnimated:YES];
+	
+	[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] finishAuthProcess];
+	[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] getDataForUrl:@"/activities/@supportedFields" 
+																		   andParameters:nil 
+																				delegate:self 
+																	   didFinishSelector:@selector(activitiesCallback:didFinishWithResponse:)];
 }
 
 #pragma mark -

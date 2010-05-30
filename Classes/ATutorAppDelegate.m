@@ -7,7 +7,6 @@
 //
 
 #import "ATutorAppDelegate.h"
-#import "LauncherViewController.h"
 #import "StyleSheet.h"
 #import "OSConsumer.h"
 
@@ -15,6 +14,8 @@
 
 @synthesize window;
 @synthesize consumer;
+@synthesize launcher;
+@synthesize webController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 	// Set service consumer
@@ -23,14 +24,20 @@
 	// Set global stylesheet
 	[TTDefaultStyleSheet setGlobalStyleSheet:[[[StyleSheet alloc] init] autorelease]];	
 	
+	// Set web controller handler
+	launcher = [[LauncherViewController alloc] init];
+	
+	webController = [[QAWebController alloc] init];
+	webController.oAuthDelegate = launcher;
+	
 	// Wire up navigator
 	TTNavigator *navigator = [TTNavigator navigator];
 	navigator.window = window;
 	navigator.persistenceMode = TTNavigatorPersistenceModeAll;
 	
 	TTURLMap *map = navigator.URLMap;
-	[map from:@"*" toViewController:[TTWebController class]];
-	[map from:@"atutor://launcher" toViewController:[LauncherViewController class]];
+	[map from:@"*" toViewController:webController];
+	[map from:@"atutor://launcher" toViewController:launcher];
 	
 	// Display launcher if there's no view controller to restore
 	if (![navigator restoreViewControllers]) {
@@ -44,21 +51,10 @@
 - (void)dealloc {
     [window release];
 	[consumer release];
+	[launcher release];
+	[webController release];
 	
     [super dealloc];
-}
-
-#pragma mark -
-#pragma mark Misc
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-	// We have been called back by a successful OAuth token grant
-	// Now we need to fetch the access token
-	NSLog(@"Handling URL: %@", url);
-	
-	[consumer finishAuthProcess];
-	
-	return YES;
 }
 
 @end

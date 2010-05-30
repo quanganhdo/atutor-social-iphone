@@ -7,17 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Three20/Three20.h>
+#import "LauncherViewController.h"
+#import "QAWebController.h"
 
 @class OSConsumer;
 
 @interface ATutorAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
 	OSConsumer *consumer;
+	LauncherViewController *launcher;
+	QAWebController *webController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) OSConsumer *consumer;
+@property (nonatomic, retain) LauncherViewController *launcher;
+@property (nonatomic, retain) TTWebController *webController;
 
 @end
 
