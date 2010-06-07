@@ -25,7 +25,7 @@
 	[TTDefaultStyleSheet setGlobalStyleSheet:[[[StyleSheet alloc] init] autorelease]];	
 	
 	// Set web controller handler
-	launcher = [[LauncherViewController alloc] init];
+	launcher = [[LauncherViewController alloc] initWithConsumer:consumer];
 	
 	webController = [[QAWebController alloc] init];
 	webController.oAuthDelegate = launcher;

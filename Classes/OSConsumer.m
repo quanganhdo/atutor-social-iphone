@@ -117,7 +117,7 @@
 		
 		NSLog(@"Request string: %@", urlString);
 		
-		[[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:urlString]];
+		[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:urlString] applyAnimated:YES]];
 	} else {
 		NSString *error = [NSString stringWithFormat:@"Got error while requesting request token. %@", response];
 		NSLog(@"Error retriving request token: %@", error);

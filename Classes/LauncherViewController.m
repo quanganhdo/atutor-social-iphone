@@ -8,7 +8,6 @@
 
 #import "LauncherViewController.h"
 #import "ATutorAppDelegate.h"
-#import "OSConsumer.h"
 #import "OAServiceTicket.h"
 #import "NSDictionary_JSONExtensions.h"
 #import "CommonFunctions.h"
@@ -23,10 +22,11 @@
 
 @synthesize launcherView;
 @synthesize logoutButton;
+@synthesize consumer;
 
-- (id)init {
+- (id)initWithConsumer:(OSConsumer *)c {
 	if (self = [super init]) {
-		
+		self.consumer = c;
 	}
 	
 	return self;
@@ -35,6 +35,7 @@
 - (void)dealloc {
 	[launcherView release];
 	[logoutButton release];
+	[consumer release];
 	
     [super dealloc];
 }
@@ -47,7 +48,7 @@
 												   target:self action:@selector(logout)];
 	
 	self.title = TTLocalizedString(@"ATutor Social", @"");
-	self.navigationItem.rightBarButtonItem = logoutButton;
+	self.navigationItem.rightBarButtonItem = consumer.accessToken ? logoutButton : nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,11 +99,10 @@
 
 - (void)launcherView:(TTLauncherView*)launcher didSelectItem:(TTLauncherItem*)item {
 	if ([item.title isEqualToString:TTLocalizedString(@"Activities", @"")]) {
-#warning TODO: Move this to ATutorHelper
-		[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] getDataForUrl:@"/activities/@supportedFields" 
-																			   andParameters:nil 
-																					delegate:self 
-																		   didFinishSelector:@selector(activitiesCallback:didFinishWithResponse:)];
+		[consumer getDataForUrl:@"/activities/@supportedFields" 
+				  andParameters:nil 
+					   delegate:self 
+			  didFinishSelector:@selector(activitiesCallback:didFinishWithResponse:)];																			  
 	}
 }
 
@@ -114,9 +114,10 @@
 #pragma mark QAWebControllerDelegate
 
 - (void)didFinishAuthorizationInWebViewController:(QAWebController *)webViewController {
-	[self.navigationController popViewControllerAnimated:YES];
+	[consumer finishAuthProcess];
 	
-	[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] finishAuthProcess];
+	[self.navigationController popViewControllerAnimated:YES];
+	[self.navigationItem setRightBarButtonItem:logoutButton animated:YES];
 }
 
 #pragma mark -
@@ -138,9 +139,11 @@
 }
 
 - (void)logout {
-	[[(OSConsumer *)[[UIApplication sharedApplication] delegate] consumer] clearAuthentication];
+	[consumer clearAuthentication];
 	
-	NSLog(@"You have been logged out");
+	[self.navigationItem setRightBarButtonItem:nil animated:YES];
+	
+	alertMessage(@"", @"You have been logged out");
 }
 
 @end

@@ -9,15 +9,19 @@
 #import <UIKit/UIKit.h>
 #import <Three20/Three20.h>
 #import "QAWebController.h"
+#import "OSConsumer.h"
 
 @interface LauncherViewController : TTViewController <TTLauncherViewDelegate, QAWebControllerDelegate> {
 	TTLauncherView *launcherView;
 	UIBarButtonItem *logoutButton;
+	OSConsumer *consumer;
 }
 
 @property (nonatomic, retain) TTLauncherView *launcherView;
 @property (nonatomic, retain) UIBarButtonItem *logoutButton;
+@property (nonatomic, retain) OSConsumer *consumer;
 
+- (id)initWithConsumer:(OSConsumer *)c;
 - (void)restorePages;
 
 @end
