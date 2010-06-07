@@ -10,6 +10,8 @@
 #import "StyleSheet.h"
 #import "OSConsumer.h"
 
+#import "ActivitiesViewController.h"
+
 @implementation ATutorAppDelegate
 
 @synthesize window;
@@ -38,6 +40,7 @@
 	TTURLMap *map = navigator.URLMap;
 	[map from:@"*" toViewController:webController];
 	[map from:@"atutor://launcher" toViewController:launcher];
+	[map from:@"atutor://activities" toViewController:[ActivitiesViewController class]];
 	
 	// Display launcher if there's no view controller to restore
 	if (![navigator restoreViewControllers]) {

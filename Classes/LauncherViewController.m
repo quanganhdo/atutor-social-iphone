@@ -8,12 +8,11 @@
 
 #import "LauncherViewController.h"
 #import "ATutorAppDelegate.h"
-#import "OAServiceTicket.h"
-#import "NSDictionary_JSONExtensions.h"
 #import "CommonFunctions.h"
 
 @interface LauncherViewController (Private)
 
+- (BOOL)isLoggedIn;
 - (void)logout;
 
 @end
@@ -48,7 +47,7 @@
 												   target:self action:@selector(logout)];
 	
 	self.title = TTLocalizedString(@"ATutor Social", @"");
-	self.navigationItem.rightBarButtonItem = consumer.accessToken ? logoutButton : nil;
+	self.navigationItem.rightBarButtonItem = [self isLoggedIn] ? logoutButton : nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,15 +98,8 @@
 
 - (void)launcherView:(TTLauncherView*)launcher didSelectItem:(TTLauncherItem*)item {
 	if ([item.title isEqualToString:TTLocalizedString(@"Activities", @"")]) {
-		[consumer getDataForUrl:@"/activities/@supportedFields" 
-				  andParameters:nil 
-					   delegate:self 
-			  didFinishSelector:@selector(activitiesCallback:didFinishWithResponse:)];																			  
+		[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:@"atutor://activities"] applyAnimated:YES]];
 	}
-}
-
-- (void)activitiesCallback:(OAServiceTicket *)ticket didFinishWithResponse:(id)response {
-	alertMessage(@"Response", response);
 }
 
 #pragma mark -
@@ -136,6 +128,10 @@
 						 animated:NO];
 		}
 	}
+}
+
+- (BOOL)isLoggedIn {
+	return consumer.accessToken != nil;
 }
 
 - (void)logout {

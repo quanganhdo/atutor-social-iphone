@@ -41,6 +41,8 @@
 		CD9025D911B1438600519439 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9025D811B1438600519439 /* Security.framework */; };
 		CD90260B11B14D2400519439 /* OSProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90260A11B14D2400519439 /* OSProvider.m */; };
 		CD90260F11B14DD300519439 /* OSConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90260E11B14DD300519439 /* OSConsumer.m */; };
+		CDA8E3C011BD323500B53FCF /* ActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E3BF11BD323500B53FCF /* ActivitiesViewController.m */; };
+		CDA8E3CE11BD32F500B53FCF /* ATutorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E3CD11BD32F500B53FCF /* ATutorHelper.m */; };
 		CDE2828711ABAB8B00A7F0EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE2828611ABAB8B00A7F0EE /* QuartzCore.framework */; };
 		CDE2832011ABAF5100A7F0EE /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */; };
 		CDE2834811ABB0A500A7F0EE /* StyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2834711ABB0A500A7F0EE /* StyleSheet.m */; };
@@ -142,6 +144,10 @@
 		CD90260A11B14D2400519439 /* OSProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSProvider.m; sourceTree = "<group>"; };
 		CD90260D11B14DD300519439 /* OSConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSConsumer.h; sourceTree = "<group>"; };
 		CD90260E11B14DD300519439 /* OSConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSConsumer.m; sourceTree = "<group>"; };
+		CDA8E3BE11BD323500B53FCF /* ActivitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiesViewController.h; sourceTree = "<group>"; };
+		CDA8E3BF11BD323500B53FCF /* ActivitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiesViewController.m; sourceTree = "<group>"; };
+		CDA8E3CC11BD32F500B53FCF /* ATutorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATutorHelper.h; sourceTree = "<group>"; };
+		CDA8E3CD11BD32F500B53FCF /* ATutorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATutorHelper.m; sourceTree = "<group>"; };
 		CDE2828611ABAB8B00A7F0EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CDE2831E11ABAF5100A7F0EE /* LauncherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewController.h; sourceTree = "<group>"; };
 		CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewController.m; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 				1D3623250D0F684500981E51 /* ATutorAppDelegate.m */,
 				CDE2831D11ABAF3B00A7F0EE /* View Controllers */,
 				CD90260C11B14D2C00519439 /* Models */,
+				CDA8E3CB11BD32E700B53FCF /* Helpers */,
 				CDE2834511ABB09400A7F0EE /* Miscellaneous */,
 			);
 			path = Classes;
@@ -358,6 +365,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		CDA8E3CB11BD32E700B53FCF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CDA8E3CC11BD32F500B53FCF /* ATutorHelper.h */,
+				CDA8E3CD11BD32F500B53FCF /* ATutorHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		CDE2822A11ABAB4D00A7F0EE /* three20 */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +390,8 @@
 				CD8F0EF111B2CFCF00D38970 /* QAWebController.m */,
 				CDE2831E11ABAF5100A7F0EE /* LauncherViewController.h */,
 				CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */,
+				CDA8E3BE11BD323500B53FCF /* ActivitiesViewController.h */,
+				CDA8E3BF11BD323500B53FCF /* ActivitiesViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -529,6 +547,8 @@
 				CD90260F11B14DD300519439 /* OSConsumer.m in Sources */,
 				CD8F0EF211B2CFCF00D38970 /* QAWebController.m in Sources */,
 				CD8F0F7211B2D79A00D38970 /* CommonFunctions.m in Sources */,
+				CDA8E3C011BD323500B53FCF /* ActivitiesViewController.m in Sources */,
+				CDA8E3CE11BD32F500B53FCF /* ATutorHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
