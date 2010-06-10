@@ -574,6 +574,7 @@
 				GCC_PREFIX_HEADER = ATutor_Prefix.pch;
 				HEADER_SEARCH_PATHS = three20/Build/Products/three20;
 				INFOPLIST_FILE = "ATutor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
