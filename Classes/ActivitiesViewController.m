@@ -23,7 +23,7 @@
 		self.variableHeightRows = YES;
 		
 		OSConsumer *consumer = [(ATutorAppDelegate *)[[UIApplication sharedApplication] delegate] consumer];
-		[consumer getDataForUrl:@"/activities/@me/@self" 
+		[consumer getDataForUrl:@"/activities/@me/@friends" 
 				  andParameters:nil 
 					   delegate:self 
 			  didFinishSelector:@selector(activitiesCallback:didFinishWithResponse:)];
