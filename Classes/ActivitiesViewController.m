@@ -40,6 +40,11 @@
 
 - (void)activitiesCallback:(OAServiceTicket *)ticket didFinishWithResponse:(id)response {
 	if (ticket.didSucceed) {
+		// Load friend list
+		NSDictionary *friendList = [NSKeyedUnarchiver unarchiveObjectWithFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friends.plist"]];
+		NSLog(@"Friend list: %@", friendList);
+		
+		// Build data source
 		NSError *error = nil;
 		NSDictionary *data = [NSDictionary dictionaryWithJSONData:[response dataUsingEncoding:NSUTF8StringEncoding] error:&error];
 		
@@ -47,8 +52,13 @@
 		
 		TTListDataSource *dataSource = [[[TTListDataSource alloc] init] autorelease];
 		for (int i = 0; i < numberOfItems; i++) {
-			NSString *entry = [[[data objectForKey:@"entry"] objectAtIndex:i] objectForKey:@"title"];
-			TTStyledText *text = [TTStyledText textFromXHTML:entry];
+			NSDictionary *entry = [[data objectForKey:@"entry"] objectAtIndex:i];
+			
+			NSString *xhtml = [NSString stringWithFormat:@"%@ %@", 
+							   [friendList objectForKey:[entry objectForKey:@"userId"]], // friend
+							   [entry objectForKey:@"title"]]; // title
+			TTStyledText *text = [TTStyledText textFromXHTML:xhtml];
+			
 			[dataSource.items addObject:[TTTableStyledTextItem itemWithText:text URL:nil]];
 		}
 		
