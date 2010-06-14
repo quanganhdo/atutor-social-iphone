@@ -12,6 +12,7 @@
 
 #import "ActivitiesViewController.h"
 
+#import "OARequestParameter.h"
 #import "CommonFunctions.h"
 #import "OAServiceTicket.h"
 #import "NSDictionary_JSONExtensions.h"
@@ -21,7 +22,7 @@
 - (void)wireUpNavigator;
 - (void)fetchFriendList;
 - (void)peopleCallback:(OAServiceTicket *)ticket didFinishWithResponse:(id)response;
-- (NSDictionary *)matchDisplayNameWithId:(NSDictionary *)data;
+- (NSDictionary *)matchDisplayNameWithId:(NSArray *)data;
 
 @end
 
@@ -47,6 +48,8 @@
 	webController.oAuthDelegate = launcher;
 	
 	// Update friend list
+	numberOfFriends = 0;
+	friends = [[NSMutableArray alloc] init];
 	[self fetchFriendList];
 	
 	[self wireUpNavigator];
@@ -60,6 +63,8 @@
 	[consumer release];
 	[launcher release];
 	[webController release];
+	
+	[friends release];
 	
     [super dealloc];
 }
@@ -82,9 +87,11 @@
 }
 
 - (void)fetchFriendList {
-#warning TODO: Fetch all friends, not only the first 20
+	NSLog(@"=-=-=-=-=-=-=-=-Fetching friend list-=-=-=-=-=-=-=-=");
+	
 	[consumer getDataForUrl:@"/people/@me/@friends" 
-			  andParameters:nil 
+			  andParameters:[NSArray arrayWithObjects:[OARequestParameter requestParameterWithName:@"count" value:@"100"], 
+							 [OARequestParameter requestParameterWithName:@"startIndex" value:[NSString stringWithFormat:@"%d", numberOfFriends]], nil] 
 				   delegate:self 
 		  didFinishSelector:@selector(peopleCallback:didFinishWithResponse:)];
 }
@@ -93,9 +100,19 @@
 	if (ticket.didSucceed) {
 		NSError *error = nil;
 		NSDictionary *data = [NSDictionary dictionaryWithJSONData:[response dataUsingEncoding:NSUTF8StringEncoding] error:&error];
-	
-		[NSKeyedArchiver archiveRootObject:[self matchDisplayNameWithId:data]
-									toFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friends.plist"]];
+		
+		numberOfFriends += [[data objectForKey:@"itemsPerPage"] intValue];
+		[friends addObjectsFromArray:[data objectForKey:@"entry"]];
+		
+		// Continue fetching or not?
+		if (numberOfFriends < [[data objectForKey:@"totalResults"] intValue]) {
+			[self fetchFriendList];
+		} else {
+			NSLog(@"Archiving friend list");
+			
+			[NSKeyedArchiver archiveRootObject:[self matchDisplayNameWithId:friends]
+										toFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friends.plist"]];
+		}
 		
 		// Good to go
 		[self wireUpNavigator];
@@ -104,10 +121,10 @@
 	}
 }
 
-- (NSDictionary *)matchDisplayNameWithId:(NSDictionary *)data {
+- (NSDictionary *)matchDisplayNameWithId:(NSArray *)data {
 	NSMutableDictionary *retVal = [[NSMutableDictionary alloc] init];
 	
-	for (NSDictionary *friend in [data objectForKey:@"entry"]) {
+	for (NSDictionary *friend in data) {
 		[retVal setObject:[friend objectForKey:@"displayName"] 
 				   forKey:[friend objectForKey:@"id"]];
 	}

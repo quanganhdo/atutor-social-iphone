@@ -76,7 +76,8 @@
 	
 	NSString *url = [[currentProvider endpointUrl] stringByAppendingString:relativeUrl];  
 	OAMutableURLRequest *request = [[[OAMutableURLRequest alloc] 
-									 initWithURL:[NSURL URLWithString:url]
+									 initWithURL:[NSURL URLWithString:url] 
+									 parameters:params
 									 consumer:consumer token:accessToken] autorelease]; 
 	[request setHTTPMethod:@"GET"];
 	

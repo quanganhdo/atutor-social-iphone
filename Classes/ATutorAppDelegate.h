@@ -17,6 +17,9 @@
 	OSConsumer *consumer;
 	LauncherViewController *launcher;
 	QAWebController *webController;
+	
+	int numberOfFriends;
+	NSMutableArray *friends;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
