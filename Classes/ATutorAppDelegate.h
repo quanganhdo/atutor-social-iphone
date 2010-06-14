@@ -9,23 +9,23 @@
 #import <UIKit/UIKit.h>
 #import "LauncherViewController.h"
 #import "QAWebController.h"
+#import "ATutorHelper.h"
 
 @class OSConsumer;
 
-@interface ATutorAppDelegate : NSObject <UIApplicationDelegate> {
+@interface ATutorAppDelegate : NSObject <UIApplicationDelegate, ATutorHelperDelegate> {
     UIWindow *window;
 	OSConsumer *consumer;
 	LauncherViewController *launcher;
 	QAWebController *webController;
-	
-	int numberOfFriends;
-	NSMutableArray *friends;
+	ATutorHelper *helper;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) OSConsumer *consumer;
 @property (nonatomic, retain) LauncherViewController *launcher;
 @property (nonatomic, retain) TTWebController *webController;
+@property (nonatomic, retain) ATutorHelper *helper;
 
 @end
 
