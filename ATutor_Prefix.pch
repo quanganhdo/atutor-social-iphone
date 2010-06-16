@@ -12,3 +12,6 @@
 
 #define kConsumerKey @"key"
 #define kConsumerSecret @"secret"
+
+#define kATutorURL @"http://localhost:8888/atutor/docs"
+#define kShindigURL @"http://localhost:8888/shindig/php"

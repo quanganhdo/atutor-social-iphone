@@ -28,10 +28,10 @@
 
 + (OSProvider *)getATutorProviderWithKey:(NSString *)key withSecret:(NSString *)secret {
 	OSProvider *atutor = [[[OSProvider alloc] init] autorelease];
-	atutor.requestUrl = @"http://localhost:8888/atutor/docs/mods/_standard/social/lib/oauth/request_token.php";
-	atutor.authorizeUrl = @"http://localhost:8888/atutor/docs/mods/_standard/social/lib/oauth/authorize.php";
-	atutor.accessUrl = @"http://localhost:8888/atutor/docs/mods/_standard/social/lib/oauth/access_token.php";
-	atutor.endpointUrl = @"http://localhost:8888/shindig/php/social/rest";
+	atutor.requestUrl = [NSString stringWithFormat:@"%@/mods/_standard/social/lib/oauth/request_token.php", kATutorURL];
+	atutor.authorizeUrl = [NSString stringWithFormat:@"%@/mods/_standard/social/lib/oauth/authorize.php", kATutorURL];
+	atutor.accessUrl = [NSString stringWithFormat:@"%@/mods/_standard/social/lib/oauth/access_token.php", kATutorURL];
+	atutor.endpointUrl = [NSString stringWithFormat:@"%@/social/rest", kShindigURL];
 	
 	atutor.isOpenSocial = YES;
 	
