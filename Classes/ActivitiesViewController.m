@@ -54,8 +54,10 @@
 		for (int i = 0; i < numberOfItems; i++) {
 			NSDictionary *entry = [[data objectForKey:@"entry"] objectAtIndex:i];
 			
+			NSString *friend = [NSString stringWithFormat:@"<a href='%@/mods/_standard/social/sprofile.php?id=%d'>%@</a>", kATutorURL, 
+								[[entry objectForKey:@"userId"] integerValue], [friendList objectForKey:[entry objectForKey:@"userId"]]];
 			NSString *xhtml = [NSString stringWithFormat:@"%@ %@", 
-							   [friendList objectForKey:[entry objectForKey:@"userId"]], // friend
+							   friend, // friend
 							   [entry objectForKey:@"title"]]; // title
 			TTStyledText *text = [TTStyledText textFromXHTML:xhtml];
 			
