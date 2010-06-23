@@ -35,7 +35,5 @@
 			<string>com.quanganhdo.atutor</string>
 		</dict>
 	</array>
-	<key>NSMainNibFile</key>
-	<string>MainWindow</string>
 </dict>
 </plist>

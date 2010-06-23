@@ -34,7 +34,7 @@
                     delegate:(id)delegate 
            didFinishSelector:(SEL)didFinishSelector {
   NSURLResponse *response;
-  NSError *error;
+  NSError *error = nil;
   
   [request prepare];
   // TODO: use the asynch fetcher from Google's open source library. 

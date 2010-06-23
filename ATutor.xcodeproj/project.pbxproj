@@ -12,7 +12,6 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		CD8F0EF211B2CFCF00D38970 /* QAWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F0EF111B2CFCF00D38970 /* QAWebController.m */; };
 		CD8F0F7211B2D79A00D38970 /* CommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F0F7111B2D79A00D38970 /* CommonFunctions.m */; };
 		CD8F0F7E11B2D7A600D38970 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8F0F7D11B2D7A600D38970 /* SystemConfiguration.framework */; };
@@ -85,7 +84,6 @@
 		1D6058910D05DD3D006BFB54 /* ATutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ATutor_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATutor_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ATutor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ATutor-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				CDE2835B11ABB70100A7F0EE /* Graphics */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* ATutor-Info.plist */,
 			);
 			name = Resources;
@@ -501,7 +498,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				CDE2836111ABB71F00A7F0EE /* Activities.png in Resources */,
 				CDE2836211ABB71F00A7F0EE /* Contacts.png in Resources */,
 				CDE2836311ABB71F00A7F0EE /* Gadgets.png in Resources */,
@@ -580,7 +576,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = ATutor;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -593,12 +589,13 @@
 				GCC_PREFIX_HEADER = ATutor_Prefix.pch;
 				HEADER_SEARCH_PATHS = three20/Build/Products/three20;
 				INFOPLIST_FILE = "ATutor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = ATutor;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
