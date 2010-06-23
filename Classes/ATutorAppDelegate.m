@@ -40,12 +40,13 @@
 	webController = [[QAWebController alloc] init];
 	webController.oAuthDelegate = launcher;
 	
+	// Setup mappings
+	[self wireUpNavigator];
+	
 	// Update friend list
 	helper = [[ATutorHelper alloc] initWithConsumer:consumer];
 	[helper setDelegate:self];
 	[helper fetchFriendList];
-	
-	[self wireUpNavigator];
 	
 	return YES;
 }
