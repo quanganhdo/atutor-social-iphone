@@ -41,7 +41,7 @@
 - (void)activitiesCallback:(OAServiceTicket *)ticket didFinishWithResponse:(id)response {
 	if (ticket.didSucceed) {
 		// Load friend list
-		NSDictionary *friendList = [NSKeyedUnarchiver unarchiveObjectWithFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friends.plist"]];
+		NSDictionary *friendList = [NSKeyedUnarchiver unarchiveObjectWithFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friend_mapping.plist"]];
 		NSLog(@"Friend list: %@", friendList);
 		
 		// Build data source

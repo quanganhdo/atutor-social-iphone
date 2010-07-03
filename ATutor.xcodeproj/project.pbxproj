@@ -51,6 +51,7 @@
 		CDE2836411ABB71F00A7F0EE /* Groups.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE2836011ABB71F00A7F0EE /* Groups.png */; };
 		CDE283A511ABBCD100A7F0EE /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CDE283A411ABBCD100A7F0EE /* Three20.bundle */; };
 		CDE283E111ABBCF200A7F0EE /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE283DE11ABBCEB00A7F0EE /* libThree20.a */; };
+		CDF0DEE611DF6F9000B2500F /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF0DEE511DF6F9000B2500F /* Friend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,8 @@
 		CDE2836011ABB71F00A7F0EE /* Groups.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Groups.png; sourceTree = "<group>"; };
 		CDE283A411ABBCD100A7F0EE /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
 		CDE283B011ABBCEA00A7F0EE /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
+		CDF0DEE411DF6F9000B2500F /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		CDF0DEE511DF6F9000B2500F /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +361,8 @@
 				CD90260A11B14D2400519439 /* OSProvider.m */,
 				CD90260D11B14DD300519439 /* OSConsumer.h */,
 				CD90260E11B14DD300519439 /* OSConsumer.m */,
+				CDF0DEE411DF6F9000B2500F /* Friend.h */,
+				CDF0DEE511DF6F9000B2500F /* Friend.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -545,6 +550,7 @@
 				CD8F0F7211B2D79A00D38970 /* CommonFunctions.m in Sources */,
 				CDA8E3C011BD323500B53FCF /* ActivitiesViewController.m in Sources */,
 				CDA8E3CE11BD32F500B53FCF /* ATutorHelper.m in Sources */,
+				CDF0DEE611DF6F9000B2500F /* Friend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

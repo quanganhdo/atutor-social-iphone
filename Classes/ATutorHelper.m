@@ -11,6 +11,7 @@
 #import "CommonFunctions.h"
 #import "OAServiceTicket.h"
 #import "NSDictionary_JSONExtensions.h"
+#import	"Friend.h"
 
 @interface ATutorHelper (Private) 
 
@@ -25,11 +26,13 @@
 @synthesize consumer;
 @synthesize numberOfFriends;
 @synthesize friends;
+@synthesize friendMapping;
 @synthesize delegate;
 
 - (void)dealloc {
 	[consumer dealloc];
 	[friends dealloc];
+	[friendMapping dealloc];
 	[delegate release];
 	
 	[super dealloc];
@@ -40,6 +43,7 @@
 		self.consumer = csm;
 		self.numberOfFriends = 0;
 		self.friends = [[NSMutableArray alloc] init];
+		self.friendMapping = [[NSMutableArray alloc] init];
 	}
 	
 	return self;
@@ -60,8 +64,20 @@
 		NSError *error = nil;
 		NSDictionary *data = [NSDictionary dictionaryWithJSONData:[response dataUsingEncoding:NSUTF8StringEncoding] error:&error];
 		
+		// Process fetched stuff
 		numberOfFriends += [[data objectForKey:@"itemsPerPage"] intValue];
-		[friends addObjectsFromArray:[data objectForKey:@"entry"]];
+		
+		// Mapping
+		[friendMapping addObjectsFromArray:[data objectForKey:@"entry"]];
+		
+		// And the real deal
+		for (NSDictionary *entry in [data objectForKey:@"entry"]) {
+			Friend *friend = [[Friend alloc] init];
+			friend.identifier = [[data objectForKey:@"id"] intValue];
+			friend.displayName = [data objectForKey:@"displayName"];
+			[friends addObject:friend];
+			[friend release];
+		}		
 		
 		// Continue fetching or not?
 		if (numberOfFriends < [[data objectForKey:@"totalResults"] intValue]) {
@@ -69,7 +85,10 @@
 		} else {
 			NSLog(@"Archiving friend list");
 			
-			[NSKeyedArchiver archiveRootObject:[self matchDisplayNameWithId:friends]
+			[NSKeyedArchiver archiveRootObject:[self matchDisplayNameWithId:friendMapping]
+										toFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friend_mapping.plist"]];
+			
+			[NSKeyedArchiver archiveRootObject:friends 
 										toFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friends.plist"]];
 		}
 		

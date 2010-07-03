@@ -16,6 +16,7 @@
 	
 	int numberOfFriends;
 	NSMutableArray *friends;
+	NSMutableArray *friendMapping;
 	
 	id delegate;
 }
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) OSConsumer *consumer;
 @property int numberOfFriends;
 @property (nonatomic, retain) NSMutableArray *friends;
+@property (nonatomic, retain) NSMutableArray *friendMapping;
 @property (nonatomic, assign) id<ATutorHelperDelegate> delegate;
 
 - (id)initWithConsumer:(OSConsumer *)csm;
