@@ -11,6 +11,7 @@
 #import "OSConsumer.h"
 
 #import "ActivitiesViewController.h"
+#import "ContactsViewController.h"
 
 @interface ATutorAppDelegate (Private) 
 
@@ -71,6 +72,7 @@
 	[map from:@"*" toViewController:webController];
 	[map from:@"atutor://launcher" toViewController:launcher];
 	[map from:@"atutor://activities" toViewController:[ActivitiesViewController class]];
+	[map from:@"atutor://contacts" toViewController:[ContactsViewController class]];
 	
 	// Display launcher 
 	[navigator openURLAction:[TTURLAction actionWithURLPath:@"atutor://launcher"]];

@@ -54,7 +54,9 @@
 	
 	[consumer getDataForUrl:@"/people/@me/@friends" 
 			  andParameters:[NSArray arrayWithObjects:[OARequestParameter requestParameterWithName:@"count" value:@"100"], 
-							 [OARequestParameter requestParameterWithName:@"startIndex" value:[NSString stringWithFormat:@"%d", numberOfFriends]], nil] 
+							 [OARequestParameter requestParameterWithName:@"startIndex" value:[NSString stringWithFormat:@"%d", numberOfFriends]], 
+							 [OARequestParameter requestParameterWithName:@"sortBy" value:@"displayName"],
+							 nil] 
 				   delegate:self 
 		  didFinishSelector:@selector(peopleCallback:didFinishWithResponse:)];	
 }
@@ -73,8 +75,8 @@
 		// And the real deal
 		for (NSDictionary *entry in [data objectForKey:@"entry"]) {
 			Friend *friend = [[Friend alloc] init];
-			friend.identifier = [[data objectForKey:@"id"] intValue];
-			friend.displayName = [data objectForKey:@"displayName"];
+			friend.identifier = [[entry objectForKey:@"id"] intValue];
+			friend.displayName = [entry objectForKey:@"displayName"];
 			[friends addObject:friend];
 			[friend release];
 		}		

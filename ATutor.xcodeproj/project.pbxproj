@@ -52,6 +52,7 @@
 		CDE283A511ABBCD100A7F0EE /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CDE283A411ABBCD100A7F0EE /* Three20.bundle */; };
 		CDE283E111ABBCF200A7F0EE /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE283DE11ABBCEB00A7F0EE /* libThree20.a */; };
 		CDF0DEE611DF6F9000B2500F /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF0DEE511DF6F9000B2500F /* Friend.m */; };
+		CDF0DF0111DF72A100B2500F /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF0DF0011DF72A100B2500F /* ContactsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,8 @@
 		CDE283B011ABBCEA00A7F0EE /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		CDF0DEE411DF6F9000B2500F /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
 		CDF0DEE511DF6F9000B2500F /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		CDF0DEFF11DF72A100B2500F /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		CDF0DF0011DF72A100B2500F /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +397,8 @@
 				CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */,
 				CDA8E3BE11BD323500B53FCF /* ActivitiesViewController.h */,
 				CDA8E3BF11BD323500B53FCF /* ActivitiesViewController.m */,
+				CDF0DEFF11DF72A100B2500F /* ContactsViewController.h */,
+				CDF0DF0011DF72A100B2500F /* ContactsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -551,6 +556,7 @@
 				CDA8E3C011BD323500B53FCF /* ActivitiesViewController.m in Sources */,
 				CDA8E3CE11BD32F500B53FCF /* ATutorHelper.m in Sources */,
 				CDF0DEE611DF6F9000B2500F /* Friend.m in Sources */,
+				CDF0DF0111DF72A100B2500F /* ContactsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
