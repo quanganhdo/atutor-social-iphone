@@ -14,7 +14,7 @@
 
 - (id)init {
 	if (self = [super init]) {
-		self.title = @"Activities";
+		self.title = @"Contacts";
 		self.autoresizesForKeyboard = YES;
 		self.variableHeightRows = YES;
 	}
@@ -29,8 +29,7 @@
 	
 	TTListDataSource *dataSource = [[[TTListDataSource alloc] init] autorelease];
 	for (Friend *friend in friendList) {
-		TTStyledText *text = [TTStyledText textFromXHTML:friend.displayName];
-		[dataSource.items addObject:[TTTableStyledTextItem itemWithText:text URL:nil]];
+		[dataSource.items addObject:[TTTableTextItem itemWithText:friend.displayName URL:nil]];
 	}
 	self.dataSource = dataSource;
 }
