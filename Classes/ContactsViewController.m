@@ -9,6 +9,7 @@
 #import "ContactsViewController.h"
 #import "Contact.h"
 #import "CommonFunctions.h"
+#import "ContactsDataSource.h"
 
 @implementation ContactsViewController
 
@@ -20,7 +21,6 @@
 	if (self = [super init]) {
 		self.title = @"Contacts";
 		self.autoresizesForKeyboard = YES;
-		self.variableHeightRows = YES;
 	}
 	
 	return self;
@@ -29,15 +29,7 @@
 - (void)loadView {
 	[super loadView];
 	
-	NSDictionary *contactList = [NSKeyedUnarchiver unarchiveObjectWithFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"contacts.plist"]];
-	TTListDataSource *dataSource = [[[TTListDataSource alloc] init] autorelease];
-	
-	for (Contact *contact in contactList) {
-		NSString *urlString = [NSString stringWithFormat:@"atutor://contact/%d/%@", contact.identifier, [contact.displayName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-		[dataSource.items addObject:[TTTableTextItem itemWithText:contact.displayName URL:urlString]];
-	}
-	
-	self.dataSource = dataSource;
+	self.dataSource = [[ContactsDataSource alloc] init];
 }
 
 @end

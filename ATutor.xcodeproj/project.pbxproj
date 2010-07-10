@@ -12,6 +12,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		CD26D9E511E8D30700003274 /* ContactsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26D9E411E8D30700003274 /* ContactsDataSource.m */; };
 		CD8235CB11E3D66A00819570 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8235CA11E3D66A00819570 /* AddressBook.framework */; };
 		CD8235CD11E3D66A00819570 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8235CC11E3D66A00819570 /* AddressBookUI.framework */; };
 		CD8235E011E3DD7500819570 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8235DF11E3DD7500819570 /* ContactViewController.m */; };
@@ -224,6 +225,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ATutor_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATutor_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ATutor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ATutor-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CD26D9E311E8D30700003274 /* ContactsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsDataSource.h; sourceTree = "<group>"; };
+		CD26D9E411E8D30700003274 /* ContactsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsDataSource.m; sourceTree = "<group>"; };
 		CD8235CA11E3D66A00819570 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = iphoneos3.1.3/System/Library/Frameworks/AddressBook.framework; sourceTree = "<group>"; };
 		CD8235CC11E3D66A00819570 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = iphoneos3.1.3/System/Library/Frameworks/AddressBookUI.framework; sourceTree = "<group>"; };
 		CD8235DE11E3DD7500819570 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
@@ -341,6 +344,7 @@
 			children = (
 				1D3623240D0F684500981E51 /* ATutorAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ATutorAppDelegate.m */,
+				CD26D9E211E8D2F800003274 /* Data Sources */,
 				CDE2831D11ABAF3B00A7F0EE /* View Controllers */,
 				CD90260C11B14D2C00519439 /* Models */,
 				CDA8E3CB11BD32E700B53FCF /* Helpers */,
@@ -404,6 +408,46 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD26D9DF11E8D2C900003274 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				CDF0DEFF11DF72A100B2500F /* ContactsViewController.h */,
+				CDF0DF0011DF72A100B2500F /* ContactsViewController.m */,
+				CD8235DE11E3DD7500819570 /* ContactViewController.h */,
+				CD8235DF11E3DD7500819570 /* ContactViewController.m */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
+		CD26D9E011E8D2CE00003274 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				CDA8E3BE11BD323500B53FCF /* ActivitiesViewController.h */,
+				CDA8E3BF11BD323500B53FCF /* ActivitiesViewController.m */,
+			);
+			name = Activities;
+			sourceTree = "<group>";
+		};
+		CD26D9E111E8D2DB00003274 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				CD8F0EF011B2CFCF00D38970 /* QAWebController.h */,
+				CD8F0EF111B2CFCF00D38970 /* QAWebController.m */,
+				CDE2831E11ABAF5100A7F0EE /* LauncherViewController.h */,
+				CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */,
+			);
+			name = Generic;
+			sourceTree = "<group>";
+		};
+		CD26D9E211E8D2F800003274 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CD26D9E311E8D30700003274 /* ContactsDataSource.h */,
+				CD26D9E411E8D30700003274 /* ContactsDataSource.m */,
+			);
+			name = "Data Sources";
 			sourceTree = "<group>";
 		};
 		CD90253211B0C0B500519439 /* KeychainUtils */ = {
@@ -552,16 +596,9 @@
 		CDE2831D11ABAF3B00A7F0EE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CD8F0EF011B2CFCF00D38970 /* QAWebController.h */,
-				CD8F0EF111B2CFCF00D38970 /* QAWebController.m */,
-				CDE2831E11ABAF5100A7F0EE /* LauncherViewController.h */,
-				CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */,
-				CDA8E3BE11BD323500B53FCF /* ActivitiesViewController.h */,
-				CDA8E3BF11BD323500B53FCF /* ActivitiesViewController.m */,
-				CDF0DEFF11DF72A100B2500F /* ContactsViewController.h */,
-				CDF0DF0011DF72A100B2500F /* ContactsViewController.m */,
-				CD8235DE11E3DD7500819570 /* ContactViewController.h */,
-				CD8235DF11E3DD7500819570 /* ContactViewController.m */,
+				CD26D9E111E8D2DB00003274 /* Generic */,
+				CD26D9E011E8D2CE00003274 /* Activities */,
+				CD26D9DF11E8D2C900003274 /* Contacts */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -889,6 +926,7 @@
 				CDF0DEE611DF6F9000B2500F /* Contact.m in Sources */,
 				CDF0DF0111DF72A100B2500F /* ContactsViewController.m in Sources */,
 				CD8235E011E3DD7500819570 /* ContactViewController.m in Sources */,
+				CD26D9E511E8D30700003274 /* ContactsDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
