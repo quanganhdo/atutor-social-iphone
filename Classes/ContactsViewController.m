@@ -13,8 +13,6 @@
 @implementation ContactsViewController
 
 - (void)dealloc {
-	[people release];
-	
 	[super dealloc];
 }
 
@@ -31,7 +29,6 @@
 - (void)loadView {
 	[super loadView];
 	
-	people = [[NSMutableArray alloc] init];
 	NSDictionary *contactList = [NSKeyedUnarchiver unarchiveObjectWithFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"contacts.plist"]];
 	TTListDataSource *dataSource = [[[TTListDataSource alloc] init] autorelease];
 	

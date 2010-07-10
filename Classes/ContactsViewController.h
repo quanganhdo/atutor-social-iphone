@@ -10,7 +10,7 @@
 #import <Three20/Three20.h>
 
 @interface ContactsViewController : TTTableViewController {
-	NSMutableArray *people;
+
 }
 
 @end
