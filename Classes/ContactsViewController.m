@@ -12,6 +12,12 @@
 
 @implementation ContactsViewController
 
+- (void)dealloc {
+	[people release];
+	
+	[super dealloc];
+}
+
 - (id)init {
 	if (self = [super init]) {
 		self.title = @"Contacts";
@@ -25,12 +31,15 @@
 - (void)loadView {
 	[super loadView];
 	
+	people = [[NSMutableArray alloc] init];
 	NSDictionary *friendList = [NSKeyedUnarchiver unarchiveObjectWithFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friends.plist"]];
-	
 	TTListDataSource *dataSource = [[[TTListDataSource alloc] init] autorelease];
+	
 	for (Friend *friend in friendList) {
-		[dataSource.items addObject:[TTTableTextItem itemWithText:friend.displayName URL:nil]];
+		NSString *urlString = [NSString stringWithFormat:@"atutor://profile/%d/%@", friend.identifier, [friend.displayName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+		[dataSource.items addObject:[TTTableTextItem itemWithText:friend.displayName URL:urlString]];
 	}
+	
 	self.dataSource = dataSource;
 }
 

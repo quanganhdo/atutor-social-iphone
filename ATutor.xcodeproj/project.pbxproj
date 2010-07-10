@@ -12,6 +12,9 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		CD8235CB11E3D66A00819570 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8235CA11E3D66A00819570 /* AddressBook.framework */; };
+		CD8235CD11E3D66A00819570 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8235CC11E3D66A00819570 /* AddressBookUI.framework */; };
+		CD8235E011E3DD7500819570 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8235DF11E3DD7500819570 /* ProfileViewController.m */; };
 		CD8F0EF211B2CFCF00D38970 /* QAWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F0EF111B2CFCF00D38970 /* QAWebController.m */; };
 		CD8F0F7211B2D79A00D38970 /* CommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F0F7111B2D79A00D38970 /* CommonFunctions.m */; };
 		CD8F0F7E11B2D7A600D38970 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8F0F7D11B2D7A600D38970 /* SystemConfiguration.framework */; };
@@ -221,6 +224,10 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ATutor_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATutor_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ATutor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ATutor-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CD8235CA11E3D66A00819570 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = iphoneos3.1.3/System/Library/Frameworks/AddressBook.framework; sourceTree = "<group>"; };
+		CD8235CC11E3D66A00819570 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = iphoneos3.1.3/System/Library/Frameworks/AddressBookUI.framework; sourceTree = "<group>"; };
+		CD8235DE11E3DD7500819570 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		CD8235DF11E3DD7500819570 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		CD8F0EF011B2CFCF00D38970 /* QAWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAWebController.h; sourceTree = "<group>"; };
 		CD8F0EF111B2CFCF00D38970 /* QAWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAWebController.m; sourceTree = "<group>"; };
 		CD8F0F7011B2D79A00D38970 /* CommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
@@ -321,6 +328,8 @@
 				CDF0E03911DF7E5500B2500F /* libThree20UI.a in Frameworks */,
 				CDF0E03A11DF7E5900B2500F /* libThree20UICommon.a in Frameworks */,
 				CDF0E03B11DF7E5900B2500F /* libThree20UINavigator.a in Frameworks */,
+				CD8235CB11E3D66A00819570 /* AddressBook.framework in Frameworks */,
+				CD8235CD11E3D66A00819570 /* AddressBookUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +394,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD8235CA11E3D66A00819570 /* AddressBook.framework */,
+				CD8235CC11E3D66A00819570 /* AddressBookUI.framework */,
 				CD8F0F7D11B2D7A600D38970 /* SystemConfiguration.framework */,
 				CD9025D811B1438600519439 /* Security.framework */,
 				CDE2828611ABAB8B00A7F0EE /* QuartzCore.framework */,
@@ -549,6 +560,8 @@
 				CDA8E3BF11BD323500B53FCF /* ActivitiesViewController.m */,
 				CDF0DEFF11DF72A100B2500F /* ContactsViewController.h */,
 				CDF0DF0011DF72A100B2500F /* ContactsViewController.m */,
+				CD8235DE11E3DD7500819570 /* ProfileViewController.h */,
+				CD8235DF11E3DD7500819570 /* ProfileViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -875,6 +888,7 @@
 				CDA8E3CE11BD32F500B53FCF /* ATutorHelper.m in Sources */,
 				CDF0DEE611DF6F9000B2500F /* Friend.m in Sources */,
 				CDF0DF0111DF72A100B2500F /* ContactsViewController.m in Sources */,
+				CD8235E011E3DD7500819570 /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
