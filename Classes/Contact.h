@@ -17,4 +17,6 @@
 @property int identifier;
 @property (nonatomic, retain) NSString *displayName;
 
++ (Contact *)contactWithDictionary:(NSDictionary *)dictionary;
+
 @end

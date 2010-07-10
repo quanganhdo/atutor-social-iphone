@@ -74,7 +74,8 @@
 	[map from:@"atutor://launcher" toViewController:launcher];
 	[map from:@"atutor://activities" toViewController:[ActivitiesViewController class]];
 	[map from:@"atutor://contacts" toViewController:[ContactsViewController class]];
-	[map from:@"atutor://contact/(initWithId:)/(name:)" toViewController:[ContactViewController alloc]];
+	[map from:@"atutor://contact/(initWithId:)" toViewController:[ContactViewController class]];
+	[map from:@"atutor://contact/(initWithId:)/(name:)" toViewController:[ContactViewController class]];
 	
 	// Display launcher 
 	[navigator openURLAction:[TTURLAction actionWithURLPath:@"atutor://launcher"]];

@@ -20,7 +20,7 @@
 }
 
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
-	// Don't handle normal URLs
+	// Ignore normal URLs
 	if (![[[request URL] scheme] isEqualToString:@"internal"]) {
 		return [super webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
 	}	

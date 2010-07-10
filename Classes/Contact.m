@@ -22,6 +22,14 @@
     [super dealloc];
 }
 
++ (Contact *)contactWithDictionary:(NSDictionary *)dictionary {
+	Contact *contact = [[self alloc] init];	
+	contact.identifier = [[dictionary objectForKey:@"id"] intValue];
+	contact.displayName = [dictionary objectForKey:@"displayName"];
+	
+	return [contact autorelease];
+}
+
 #pragma mark -
 #pragma mark Keyed Archiving
 

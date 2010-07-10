@@ -59,7 +59,7 @@
 								 [contactList objectForKey:[entry objectForKey:@"userId"]]]; // name
 			NSString *xhtml = [NSString stringWithFormat:@"%@ %@", 
 							   contact, // contact
-							   [entry objectForKey:@"title"]]; // title
+							   rewriteURLStrings([entry objectForKey:@"title"])]; // title
 			TTStyledText *text = [TTStyledText textFromXHTML:xhtml];
 			
 			[dataSource.items addObject:[TTTableStyledTextItem itemWithText:text URL:nil]];

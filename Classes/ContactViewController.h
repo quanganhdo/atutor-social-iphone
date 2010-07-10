@@ -15,6 +15,7 @@
 	ABAddressBookRef addressBook;
 }
 
+- (id)initWithId:(int)identifier;
 - (id)initWithId:(int)identifier name:(NSString *)name;
 
 @end

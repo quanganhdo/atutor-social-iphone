@@ -7,9 +7,16 @@
 //
 
 #import "ContactViewController.h"
-
+#import "CommonFunctions.h"
 
 @implementation ContactViewController
+
+- (id)initWithId:(int)identifier {
+	NSDictionary *contactList = [NSKeyedUnarchiver unarchiveObjectWithFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"contact_mapping.plist"]];
+	
+	return [self initWithId:identifier 
+					   name:[contactList objectForKey:[NSString stringWithFormat:@"%d", identifier]]];
+}
 
 - (id)initWithId:(int)identifier name:(NSString *)name {
 	addressBook = ABAddressBookCreate();

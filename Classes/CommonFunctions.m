@@ -47,4 +47,16 @@ NSString *linkToContact(int id, NSString *name) {
 	return [NSString stringWithFormat:@"atutor://contact/%d/%@", id, [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
+NSString *rewriteURLStrings(NSString *content) {
+	NSMutableString *retVal = [NSMutableString stringWithString:content];
+	
+	// Links to contacts
+	[retVal replaceOccurrencesOfString:[NSString stringWithFormat:@"%@/mods/_standard/social/sprofile.php?id=", kATutorURL] 
+							withString:@"atutor://contact/"
+							   options:NSCaseInsensitiveSearch
+								 range:NSMakeRange(0, [retVal length])];
+	
+	return retVal;
+}
+
 @end

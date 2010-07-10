@@ -20,5 +20,6 @@ NSString *applicationDocumentsDirectory();
 BOOL isLoggedIn();
 
 NSString *linkToContact(int id, NSString *name);
+NSString *rewriteURLStrings(NSString *content);
 
 @end

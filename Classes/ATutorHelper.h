@@ -29,6 +29,7 @@
 
 - (id)initWithConsumer:(OSConsumer *)csm;
 - (void)fetchContactList;
+- (void)fetchOwnProfile;
 
 @end
 
