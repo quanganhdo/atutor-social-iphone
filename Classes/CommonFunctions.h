@@ -19,4 +19,6 @@ NSString *applicationDocumentsDirectory();
 
 BOOL isLoggedIn();
 
+NSString *linkToContact(int id, NSString *name);
+
 @end

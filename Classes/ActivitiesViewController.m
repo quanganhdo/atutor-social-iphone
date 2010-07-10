@@ -54,10 +54,9 @@
 		for (int i = 0; i < numberOfItems; i++) {
 			NSDictionary *entry = [[data objectForKey:@"entry"] objectAtIndex:i];
 			
-			NSString *contact = [NSString stringWithFormat:@"<a href='atutor://contact/%d/%@'>%@</a>", 
-								[[entry objectForKey:@"userId"] integerValue], 
-								 [[contactList objectForKey:[entry objectForKey:@"userId"]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], 
-								 [contactList objectForKey:[entry objectForKey:@"userId"]]];
+			NSString *contact = [NSString stringWithFormat:@"<a href='%@'>%@</a>", 
+								 linkToContact([[entry objectForKey:@"userId"] integerValue], [contactList objectForKey:[entry objectForKey:@"userId"]]), // link
+								 [contactList objectForKey:[entry objectForKey:@"userId"]]]; // name
 			NSString *xhtml = [NSString stringWithFormat:@"%@ %@", 
 							   contact, // contact
 							   [entry objectForKey:@"title"]]; // title

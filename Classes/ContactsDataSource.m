@@ -22,7 +22,7 @@
 		
 		for (Contact *contact in contactList) {
 			// Setup contact item
-			NSString *urlString = [NSString stringWithFormat:@"atutor://contact/%d/%@", contact.identifier, [contact.displayName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+			NSString *urlString = linkToContact(contact.identifier, contact.displayName);
 			TTTableTextItem *contactItem = [TTTableTextItem itemWithText:contact.displayName URL:urlString];
 			
 			// Setup name indexes for section headers

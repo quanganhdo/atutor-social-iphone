@@ -43,4 +43,8 @@ BOOL isLoggedIn() {
 	&& ![[SFHFKeychainUtils getPasswordForUsername:@"requestToken" andServiceName:kATutor error:nil] isEqualToString:@""];
 }
 
+NSString *linkToContact(int id, NSString *name) {
+	return [NSString stringWithFormat:@"atutor://contact/%d/%@", id, [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+}
+
 @end
