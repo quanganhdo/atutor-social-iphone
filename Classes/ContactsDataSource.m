@@ -46,13 +46,16 @@
 		for (NSString *index in self.sections) {
 			[self.items addObject:[nameIndexes objectForKey:index]];
 		}
+		
+		TTTableSummaryItem *countItem = [TTTableSummaryItem itemWithText:[NSString stringWithFormat:@"%d Contacts", [contactList count]] URL:NULL];
+		[[self.items lastObject] addObject:countItem];
 	}
 	
 	return self;
 }
 
 - (NSArray*)sectionIndexTitlesForTableView:(UITableView*)tableView {
-	return [TTSectionedDataSource lettersForSectionsWithSearch:NO summary:NO];
+	return [TTSectionedDataSource lettersForSectionsWithSearch:NO summary:YES];
 }
 
 - (Class)tableView:(UITableView*)tableView cellClassForObject:(id)object {
