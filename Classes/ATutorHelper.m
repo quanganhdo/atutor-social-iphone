@@ -11,7 +11,7 @@
 #import "CommonFunctions.h"
 #import "OAServiceTicket.h"
 #import "NSDictionary_JSONExtensions.h"
-#import	"Friend.h"
+#import	"Contact.h"
 
 @interface ATutorHelper (Private) 
 
@@ -24,15 +24,15 @@
 @implementation ATutorHelper
 
 @synthesize consumer;
-@synthesize numberOfFriends;
-@synthesize friends;
-@synthesize friendMapping;
+@synthesize numberOfContacts;
+@synthesize contacts;
+@synthesize contactMapping;
 @synthesize delegate;
 
 - (void)dealloc {
 	[consumer dealloc];
-	[friends dealloc];
-	[friendMapping dealloc];
+	[contacts dealloc];
+	[contactMapping dealloc];
 	[delegate release];
 	
 	[super dealloc];
@@ -41,20 +41,20 @@
 - (id)initWithConsumer:(OSConsumer *)csm {
 	if (self = [super init]) {
 		self.consumer = csm;
-		self.numberOfFriends = 0;
-		self.friends = [[NSMutableArray alloc] init];
-		self.friendMapping = [[NSMutableArray alloc] init];
+		self.numberOfContacts = 0;
+		self.contacts = [[NSMutableArray alloc] init];
+		self.contactMapping = [[NSMutableArray alloc] init];
 	}
 	
 	return self;
 }
 
-- (void)fetchFriendList {
-	NSLog(@"=-=-=-=-=-=-=-=-Fetching friend list-=-=-=-=-=-=-=-=");
+- (void)fetchContactList {
+	NSLog(@"=-=-=-=-=-=-=-=-Fetching contact list-=-=-=-=-=-=-=-=");
 	
-	[consumer getDataForUrl:@"/people/@me/@friends" 
+	[consumer getDataForUrl:@"/people/@me/@contacts" 
 			  andParameters:[NSArray arrayWithObjects:[OARequestParameter requestParameterWithName:@"count" value:@"100"], 
-							 [OARequestParameter requestParameterWithName:@"startIndex" value:[NSString stringWithFormat:@"%d", numberOfFriends]], 
+							 [OARequestParameter requestParameterWithName:@"startIndex" value:[NSString stringWithFormat:@"%d", numberOfContacts]], 
 							 [OARequestParameter requestParameterWithName:@"sortBy" value:@"displayName"],
 							 nil] 
 				   delegate:self 
@@ -67,36 +67,36 @@
 		NSDictionary *data = [NSDictionary dictionaryWithJSONData:[response dataUsingEncoding:NSUTF8StringEncoding] error:&error];
 		
 		// Process fetched stuff
-		numberOfFriends += [[data objectForKey:@"itemsPerPage"] intValue];
+		numberOfContacts += [[data objectForKey:@"itemsPerPage"] intValue];
 		
 		// Mapping
-		[friendMapping addObjectsFromArray:[data objectForKey:@"entry"]];
+		[contactMapping addObjectsFromArray:[data objectForKey:@"entry"]];
 		
 		// And the real deal
 		for (NSDictionary *entry in [data objectForKey:@"entry"]) {
-			Friend *friend = [[Friend alloc] init];
-			friend.identifier = [[entry objectForKey:@"id"] intValue];
-			friend.displayName = [entry objectForKey:@"displayName"];
-			[friends addObject:friend];
-			[friend release];
+			Contact *contact = [[Contact alloc] init];
+			contact.identifier = [[entry objectForKey:@"id"] intValue];
+			contact.displayName = [entry objectForKey:@"displayName"];
+			[contacts addObject:contact];
+			[contact release];
 		}		
 		
 		// Continue fetching or not?
-		if (numberOfFriends < [[data objectForKey:@"totalResults"] intValue]) {
-			[self fetchFriendList];
+		if (numberOfContacts < [[data objectForKey:@"totalResults"] intValue]) {
+			[self fetchContactList];
 		} else {
-			NSLog(@"Archiving friend list");
+			NSLog(@"Archiving contact list");
 			
-			[NSKeyedArchiver archiveRootObject:[self matchDisplayNameWithId:friendMapping]
-										toFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friend_mapping.plist"]];
+			[NSKeyedArchiver archiveRootObject:[self matchDisplayNameWithId:contactMapping]
+										toFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"contact_mapping.plist"]];
 			
-			[NSKeyedArchiver archiveRootObject:friends 
-										toFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friends.plist"]];
+			[NSKeyedArchiver archiveRootObject:contacts 
+										toFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"contacts.plist"]];
 		}
 		
 		// Good to go
-		if (delegate && [delegate respondsToSelector:@selector(doneFetchingFriendList)]) {
-			[delegate performSelector:@selector(doneFetchingFriendList)];
+		if (delegate && [delegate respondsToSelector:@selector(doneFetchingContactList)]) {
+			[delegate performSelector:@selector(doneFetchingContactList)];
 		}
 	} else {
 		alertMessage(@"Error", @"Unable to process your request");
@@ -106,9 +106,9 @@
 - (NSDictionary *)matchDisplayNameWithId:(NSArray *)data {
 	NSMutableDictionary *retVal = [[NSMutableDictionary alloc] init];
 	
-	for (NSDictionary *friend in data) {
-		[retVal setObject:[friend objectForKey:@"displayName"] 
-				   forKey:[friend objectForKey:@"id"]];
+	for (NSDictionary *contact in data) {
+		[retVal setObject:[contact objectForKey:@"displayName"] 
+				   forKey:[contact objectForKey:@"id"]];
 	}
 	
 	return [retVal autorelease];

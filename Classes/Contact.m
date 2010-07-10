@@ -1,15 +1,15 @@
 //
-//  Friend.m
+//  Contact.m
 //  ATutor
 //
 //  Created by Quang Anh Do on 03/07/2010.
 //  Copyright 2010 Quang Anh Do. All rights reserved.
 //
 
-#import "Friend.h"
+#import "Contact.h"
 
 
-@implementation Friend
+@implementation Contact
 
 @synthesize identifier;
 @synthesize displayName;

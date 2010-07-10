@@ -14,7 +14,7 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		CD8235CB11E3D66A00819570 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8235CA11E3D66A00819570 /* AddressBook.framework */; };
 		CD8235CD11E3D66A00819570 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8235CC11E3D66A00819570 /* AddressBookUI.framework */; };
-		CD8235E011E3DD7500819570 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8235DF11E3DD7500819570 /* ProfileViewController.m */; };
+		CD8235E011E3DD7500819570 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8235DF11E3DD7500819570 /* ContactViewController.m */; };
 		CD8F0EF211B2CFCF00D38970 /* QAWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F0EF111B2CFCF00D38970 /* QAWebController.m */; };
 		CD8F0F7211B2D79A00D38970 /* CommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F0F7111B2D79A00D38970 /* CommonFunctions.m */; };
 		CD8F0F7E11B2D7A600D38970 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8F0F7D11B2D7A600D38970 /* SystemConfiguration.framework */; };
@@ -52,7 +52,7 @@
 		CDE2836211ABB71F00A7F0EE /* Contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE2835E11ABB71F00A7F0EE /* Contacts.png */; };
 		CDE2836311ABB71F00A7F0EE /* Gadgets.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE2835F11ABB71F00A7F0EE /* Gadgets.png */; };
 		CDE2836411ABB71F00A7F0EE /* Groups.png in Resources */ = {isa = PBXBuildFile; fileRef = CDE2836011ABB71F00A7F0EE /* Groups.png */; };
-		CDF0DEE611DF6F9000B2500F /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF0DEE511DF6F9000B2500F /* Friend.m */; };
+		CDF0DEE611DF6F9000B2500F /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF0DEE511DF6F9000B2500F /* Contact.m */; };
 		CDF0DF0111DF72A100B2500F /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF0DF0011DF72A100B2500F /* ContactsViewController.m */; };
 		CDF0E03511DF7E5300B2500F /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF0DFDF11DF7E1900B2500F /* libThree20.a */; };
 		CDF0E03611DF7E5400B2500F /* libThree20Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF0E00A11DF7E4100B2500F /* libThree20Core.a */; };
@@ -226,8 +226,8 @@
 		8D1107310486CEB800E47090 /* ATutor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ATutor-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		CD8235CA11E3D66A00819570 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = iphoneos3.1.3/System/Library/Frameworks/AddressBook.framework; sourceTree = "<group>"; };
 		CD8235CC11E3D66A00819570 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = iphoneos3.1.3/System/Library/Frameworks/AddressBookUI.framework; sourceTree = "<group>"; };
-		CD8235DE11E3DD7500819570 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		CD8235DF11E3DD7500819570 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		CD8235DE11E3DD7500819570 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		CD8235DF11E3DD7500819570 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		CD8F0EF011B2CFCF00D38970 /* QAWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAWebController.h; sourceTree = "<group>"; };
 		CD8F0EF111B2CFCF00D38970 /* QAWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAWebController.m; sourceTree = "<group>"; };
 		CD8F0F7011B2D79A00D38970 /* CommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
@@ -296,8 +296,8 @@
 		CDE2835E11ABB71F00A7F0EE /* Contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Contacts.png; sourceTree = "<group>"; };
 		CDE2835F11ABB71F00A7F0EE /* Gadgets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gadgets.png; sourceTree = "<group>"; };
 		CDE2836011ABB71F00A7F0EE /* Groups.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Groups.png; sourceTree = "<group>"; };
-		CDF0DEE411DF6F9000B2500F /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
-		CDF0DEE511DF6F9000B2500F /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		CDF0DEE411DF6F9000B2500F /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		CDF0DEE511DF6F9000B2500F /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		CDF0DEFF11DF72A100B2500F /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		CDF0DF0011DF72A100B2500F /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		CDF0DFB111DF7E1900B2500F /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -519,8 +519,8 @@
 				CD90260A11B14D2400519439 /* OSProvider.m */,
 				CD90260D11B14DD300519439 /* OSConsumer.h */,
 				CD90260E11B14DD300519439 /* OSConsumer.m */,
-				CDF0DEE411DF6F9000B2500F /* Friend.h */,
-				CDF0DEE511DF6F9000B2500F /* Friend.m */,
+				CDF0DEE411DF6F9000B2500F /* Contact.h */,
+				CDF0DEE511DF6F9000B2500F /* Contact.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -560,8 +560,8 @@
 				CDA8E3BF11BD323500B53FCF /* ActivitiesViewController.m */,
 				CDF0DEFF11DF72A100B2500F /* ContactsViewController.h */,
 				CDF0DF0011DF72A100B2500F /* ContactsViewController.m */,
-				CD8235DE11E3DD7500819570 /* ProfileViewController.h */,
-				CD8235DF11E3DD7500819570 /* ProfileViewController.m */,
+				CD8235DE11E3DD7500819570 /* ContactViewController.h */,
+				CD8235DF11E3DD7500819570 /* ContactViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -886,9 +886,9 @@
 				CD8F0F7211B2D79A00D38970 /* CommonFunctions.m in Sources */,
 				CDA8E3C011BD323500B53FCF /* ActivitiesViewController.m in Sources */,
 				CDA8E3CE11BD32F500B53FCF /* ATutorHelper.m in Sources */,
-				CDF0DEE611DF6F9000B2500F /* Friend.m in Sources */,
+				CDF0DEE611DF6F9000B2500F /* Contact.m in Sources */,
 				CDF0DF0111DF72A100B2500F /* ContactsViewController.m in Sources */,
-				CD8235E011E3DD7500819570 /* ProfileViewController.m in Sources */,
+				CD8235E011E3DD7500819570 /* ContactViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

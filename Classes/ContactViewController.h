@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.h
+//  ContactViewController.h
 //  ATutor
 //
 //  Created by Quang Anh Do on 06/07/2010.
@@ -11,7 +11,7 @@
 #import <AddressBookUI/AddressBookUI.h>
 
 
-@interface ProfileViewController : ABPersonViewController {
+@interface ContactViewController : ABPersonViewController {
 	ABAddressBookRef addressBook;
 }
 

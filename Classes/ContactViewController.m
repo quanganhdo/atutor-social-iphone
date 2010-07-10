@@ -1,15 +1,15 @@
 //
-//  ProfileViewController.m
+//  ContactViewController.m
 //  ATutor
 //
 //  Created by Quang Anh Do on 06/07/2010.
 //  Copyright 2010 Quang Anh Do. All rights reserved.
 //
 
-#import "ProfileViewController.h"
+#import "ContactViewController.h"
 
 
-@implementation ProfileViewController
+@implementation ContactViewController
 
 - (id)initWithId:(int)identifier name:(NSString *)name {
 	addressBook = ABAddressBookCreate();

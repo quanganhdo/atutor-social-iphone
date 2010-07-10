@@ -14,26 +14,26 @@
 @interface ATutorHelper : NSObject {
 	OSConsumer *consumer;
 	
-	int numberOfFriends;
-	NSMutableArray *friends;
-	NSMutableArray *friendMapping;
+	int numberOfContacts;
+	NSMutableArray *contacts;
+	NSMutableArray *contactMapping;
 	
 	id delegate;
 }
 
 @property (nonatomic, retain) OSConsumer *consumer;
-@property int numberOfFriends;
-@property (nonatomic, retain) NSMutableArray *friends;
-@property (nonatomic, retain) NSMutableArray *friendMapping;
+@property int numberOfContacts;
+@property (nonatomic, retain) NSMutableArray *contacts;
+@property (nonatomic, retain) NSMutableArray *contactMapping;
 @property (nonatomic, assign) id<ATutorHelperDelegate> delegate;
 
 - (id)initWithConsumer:(OSConsumer *)csm;
-- (void)fetchFriendList;
+- (void)fetchContactList;
 
 @end
 
 @protocol ATutorHelperDelegate
 
-- (void)doneFetchingFriendList;
+- (void)doneFetchingContactList;
 
 @end

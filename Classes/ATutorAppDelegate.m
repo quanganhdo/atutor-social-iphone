@@ -12,7 +12,7 @@
 
 #import "ActivitiesViewController.h"
 #import "ContactsViewController.h"
-#import "ProfileViewController.h"
+#import "ContactViewController.h"
 
 @interface ATutorAppDelegate (Private) 
 
@@ -42,10 +42,10 @@
 	webController = [[QAWebController alloc] init];
 	webController.oAuthDelegate = launcher;
 	
-	// Update friend list
+	// Update contact list
 	helper = [[ATutorHelper alloc] initWithConsumer:consumer];
 	[helper setDelegate:self];
-	[helper fetchFriendList];
+	[helper fetchContactList];
 	
 	return YES;
 }
@@ -74,13 +74,13 @@
 	[map from:@"atutor://launcher" toViewController:launcher];
 	[map from:@"atutor://activities" toViewController:[ActivitiesViewController class]];
 	[map from:@"atutor://contacts" toViewController:[ContactsViewController class]];
-	[map from:@"atutor://profile/(initWithId:)/(name:)" toViewController:[ProfileViewController alloc]];
+	[map from:@"atutor://contact/(initWithId:)/(name:)" toViewController:[ContactViewController alloc]];
 	
 	// Display launcher 
 	[navigator openURLAction:[TTURLAction actionWithURLPath:@"atutor://launcher"]];
 }
 
-- (void)doneFetchingFriendList {
+- (void)doneFetchingContactList {
 	[self wireUpNavigator];
 }
 

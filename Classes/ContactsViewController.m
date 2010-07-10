@@ -7,7 +7,7 @@
 //
 
 #import "ContactsViewController.h"
-#import "Friend.h"
+#import "Contact.h"
 #import "CommonFunctions.h"
 
 @implementation ContactsViewController
@@ -32,12 +32,12 @@
 	[super loadView];
 	
 	people = [[NSMutableArray alloc] init];
-	NSDictionary *friendList = [NSKeyedUnarchiver unarchiveObjectWithFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friends.plist"]];
+	NSDictionary *contactList = [NSKeyedUnarchiver unarchiveObjectWithFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"contacts.plist"]];
 	TTListDataSource *dataSource = [[[TTListDataSource alloc] init] autorelease];
 	
-	for (Friend *friend in friendList) {
-		NSString *urlString = [NSString stringWithFormat:@"atutor://profile/%d/%@", friend.identifier, [friend.displayName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-		[dataSource.items addObject:[TTTableTextItem itemWithText:friend.displayName URL:urlString]];
+	for (Contact *contact in contactList) {
+		NSString *urlString = [NSString stringWithFormat:@"atutor://contact/%d/%@", contact.identifier, [contact.displayName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+		[dataSource.items addObject:[TTTableTextItem itemWithText:contact.displayName URL:urlString]];
 	}
 	
 	self.dataSource = dataSource;

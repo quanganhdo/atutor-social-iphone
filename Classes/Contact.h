@@ -1,5 +1,5 @@
 //
-//  Friend.h
+//  Contact.h
 //  ATutor
 //
 //  Created by Quang Anh Do on 03/07/2010.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Friend : NSObject {
+@interface Contact : NSObject {
 	int identifier;
 	NSString *displayName;
 }

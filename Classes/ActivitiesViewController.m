@@ -23,7 +23,7 @@
 		self.variableHeightRows = YES;
 		
 		OSConsumer *consumer = [(ATutorAppDelegate *)[[UIApplication sharedApplication] delegate] consumer];
-		[consumer getDataForUrl:@"/activities/@me/@friends" 
+		[consumer getDataForUrl:@"/activities/@me/@contacts" 
 				  andParameters:nil 
 					   delegate:self 
 			  didFinishSelector:@selector(activitiesCallback:didFinishWithResponse:)];
@@ -40,9 +40,9 @@
 
 - (void)activitiesCallback:(OAServiceTicket *)ticket didFinishWithResponse:(id)response {
 	if (ticket.didSucceed) {
-		// Load friend list
-		NSDictionary *friendList = [NSKeyedUnarchiver unarchiveObjectWithFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"friend_mapping.plist"]];
-		NSLog(@"Friend list: %@", friendList);
+		// Load contact list
+		NSDictionary *contactList = [NSKeyedUnarchiver unarchiveObjectWithFile:[applicationDocumentsDirectory() stringByAppendingPathComponent:@"contact_mapping.plist"]];
+		NSLog(@"Contact list: %@", contactList);
 		
 		// Build data source
 		NSError *error = nil;
@@ -54,10 +54,10 @@
 		for (int i = 0; i < numberOfItems; i++) {
 			NSDictionary *entry = [[data objectForKey:@"entry"] objectAtIndex:i];
 			
-			NSString *friend = [NSString stringWithFormat:@"<a href='%@/mods/_standard/social/sprofile.php?id=%d'>%@</a>", kATutorURL, 
-								[[entry objectForKey:@"userId"] integerValue], [friendList objectForKey:[entry objectForKey:@"userId"]]];
+			NSString *contact = [NSString stringWithFormat:@"<a href='%@/mods/_standard/social/sprofile.php?id=%d'>%@</a>", kATutorURL, 
+								[[entry objectForKey:@"userId"] integerValue], [contactList objectForKey:[entry objectForKey:@"userId"]]];
 			NSString *xhtml = [NSString stringWithFormat:@"%@ %@", 
-							   friend, // friend
+							   contact, // contact
 							   [entry objectForKey:@"title"]]; // title
 			TTStyledText *text = [TTStyledText textFromXHTML:xhtml];
 			
