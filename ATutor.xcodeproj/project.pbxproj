@@ -14,6 +14,7 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		CD26D9E511E8D30700003274 /* ContactsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26D9E411E8D30700003274 /* ContactsDataSource.m */; };
 		CD26DA9C11E8E66800003274 /* ContactItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26DA9B11E8E66800003274 /* ContactItemCell.m */; };
+		CD26DCA211E9469000003274 /* ContactViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD26DCA111E9469000003274 /* ContactViewControllerDelegate.m */; };
 		CD8235CB11E3D66A00819570 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8235CA11E3D66A00819570 /* AddressBook.framework */; };
 		CD8235CD11E3D66A00819570 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8235CC11E3D66A00819570 /* AddressBookUI.framework */; };
 		CD8235E011E3DD7500819570 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8235DF11E3DD7500819570 /* ContactViewController.m */; };
@@ -230,6 +231,8 @@
 		CD26D9E411E8D30700003274 /* ContactsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsDataSource.m; sourceTree = "<group>"; };
 		CD26DA9A11E8E66800003274 /* ContactItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactItemCell.h; sourceTree = "<group>"; };
 		CD26DA9B11E8E66800003274 /* ContactItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactItemCell.m; sourceTree = "<group>"; };
+		CD26DCA011E9469000003274 /* ContactViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewControllerDelegate.h; sourceTree = "<group>"; };
+		CD26DCA111E9469000003274 /* ContactViewControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewControllerDelegate.m; sourceTree = "<group>"; };
 		CD8235CA11E3D66A00819570 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = iphoneos3.1.3/System/Library/Frameworks/AddressBook.framework; sourceTree = "<group>"; };
 		CD8235CC11E3D66A00819570 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = iphoneos3.1.3/System/Library/Frameworks/AddressBookUI.framework; sourceTree = "<group>"; };
 		CD8235DE11E3DD7500819570 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
@@ -347,9 +350,7 @@
 			children = (
 				1D3623240D0F684500981E51 /* ATutorAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ATutorAppDelegate.m */,
-				CD26D9E211E8D2F800003274 /* Data Sources */,
-				CD26DA9911E8E64500003274 /* Cell Items */,
-				CDE2831D11ABAF3B00A7F0EE /* View Controllers */,
+				CDE2831D11ABAF3B00A7F0EE /* View Controllers & Stuff */,
 				CD90260C11B14D2C00519439 /* Models */,
 				CDA8E3CB11BD32E700B53FCF /* Helpers */,
 				CDE2834511ABB09400A7F0EE /* Miscellaneous */,
@@ -421,6 +422,12 @@
 				CDF0DF0011DF72A100B2500F /* ContactsViewController.m */,
 				CD8235DE11E3DD7500819570 /* ContactViewController.h */,
 				CD8235DF11E3DD7500819570 /* ContactViewController.m */,
+				CD26DCA011E9469000003274 /* ContactViewControllerDelegate.h */,
+				CD26DCA111E9469000003274 /* ContactViewControllerDelegate.m */,
+				CD26D9E311E8D30700003274 /* ContactsDataSource.h */,
+				CD26D9E411E8D30700003274 /* ContactsDataSource.m */,
+				CD26DA9A11E8E66800003274 /* ContactItemCell.h */,
+				CD26DA9B11E8E66800003274 /* ContactItemCell.m */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
@@ -443,24 +450,6 @@
 				CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */,
 			);
 			name = Generic;
-			sourceTree = "<group>";
-		};
-		CD26D9E211E8D2F800003274 /* Data Sources */ = {
-			isa = PBXGroup;
-			children = (
-				CD26D9E311E8D30700003274 /* ContactsDataSource.h */,
-				CD26D9E411E8D30700003274 /* ContactsDataSource.m */,
-			);
-			name = "Data Sources";
-			sourceTree = "<group>";
-		};
-		CD26DA9911E8E64500003274 /* Cell Items */ = {
-			isa = PBXGroup;
-			children = (
-				CD26DA9A11E8E66800003274 /* ContactItemCell.h */,
-				CD26DA9B11E8E66800003274 /* ContactItemCell.m */,
-			);
-			name = "Cell Items";
 			sourceTree = "<group>";
 		};
 		CD90253211B0C0B500519439 /* KeychainUtils */ = {
@@ -606,14 +595,14 @@
 			name = three20;
 			sourceTree = "<group>";
 		};
-		CDE2831D11ABAF3B00A7F0EE /* View Controllers */ = {
+		CDE2831D11ABAF3B00A7F0EE /* View Controllers & Stuff */ = {
 			isa = PBXGroup;
 			children = (
 				CD26D9E111E8D2DB00003274 /* Generic */,
 				CD26D9E011E8D2CE00003274 /* Activities */,
 				CD26D9DF11E8D2C900003274 /* Contacts */,
 			);
-			name = "View Controllers";
+			name = "View Controllers & Stuff";
 			sourceTree = "<group>";
 		};
 		CDE2834511ABB09400A7F0EE /* Miscellaneous */ = {
@@ -941,6 +930,7 @@
 				CD8235E011E3DD7500819570 /* ContactViewController.m in Sources */,
 				CD26D9E511E8D30700003274 /* ContactsDataSource.m in Sources */,
 				CD26DA9C11E8E66800003274 /* ContactItemCell.m in Sources */,
+				CD26DCA211E9469000003274 /* ContactViewControllerDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
