@@ -42,6 +42,8 @@
 	webController = [[QAWebController alloc] init];
 	webController.oAuthDelegate = launcher;
 	
+	[self wireUpNavigator];
+	
 	// Update contact list
 	helper = [[ATutorHelper alloc] initWithConsumer:consumer];
 	[helper setDelegate:self];
@@ -76,13 +78,10 @@
 	[map from:@"atutor://contacts" toViewController:[ContactsViewController class]];
 	[map from:@"atutor://contact/(initWithId:)" toViewController:[ContactViewController class]];
 	[map from:@"atutor://contact/(initWithId:)/(name:)" toViewController:[ContactViewController class]];
-	
-	// Display launcher 
-	[navigator openURLAction:[TTURLAction actionWithURLPath:@"atutor://launcher"]];
 }
 
 - (void)doneFetchingContactList {
-	[self wireUpNavigator];
+	[[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"atutor://launcher"]];
 }
 
 @end
