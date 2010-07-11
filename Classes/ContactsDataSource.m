@@ -40,7 +40,7 @@
 		}
 		
 		// Final touches
-		self.sections = [[nameIndexes allKeys] mutableCopy];
+		self.sections = [[[nameIndexes allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] mutableCopy];
 		self.items = [NSMutableArray array];
 		
 		for (NSString *index in self.sections) {
