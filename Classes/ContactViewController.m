@@ -13,19 +13,8 @@
 
 - (void)dealloc {
 	CFRelease(addressBook);
-	[delegate release];
 	
 	[super dealloc];
-}
-
-- (id)initWithURL:(NSURL *)URL query:(NSDictionary *)query {
-	NSLog(@"QAD");
-	if (self = [[ABPersonViewController alloc] init]) {
-		[(ABPersonViewController *)self setAllowsEditing:YES];
-		self.displayedPerson = [query objectForKey:@"person"];
-	}
-	
-	return self;
 }
 
 - (id)initWithId:(int)identifier {
@@ -36,8 +25,6 @@
 }
 
 - (id)initWithId:(int)identifier name:(NSString *)name {
-	delegate = [[ContactViewControllerDelegate alloc] init];
-	
 	addressBook = ABAddressBookCreate();
 	
 	ABRecordRef person = NULL;
@@ -70,14 +57,13 @@
 	if (ABRecordGetRecordID(person) != kABRecordInvalidID) {
 		self = [[ABPersonViewController alloc] init];
 		[(ABPersonViewController *)self setAllowsEditing:YES];
+		[(ABPersonViewController *)self setDisplayedPerson:person];
 	} else {
 		self = [[ABUnknownPersonViewController alloc] init];
 		[(ABUnknownPersonViewController *)self setAllowsActions:YES];
 		[(ABUnknownPersonViewController *)self setAllowsAddingToAddressBook:YES];
-		[(ABUnknownPersonViewController *)self setUnknownPersonViewDelegate:delegate];
+		[(ABUnknownPersonViewController *)self setDisplayedPerson:person];
 	}
-	
-	self.displayedPerson = person;
 	
 	if (matches) CFRelease(matches);
 	
