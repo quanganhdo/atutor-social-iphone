@@ -41,14 +41,14 @@
 		} else {
 			mutableURLs = ABMultiValueCreateMutable(kABStringPropertyType);
 		}
-		ABMultiValueAddValueAndLabel(mutableURLs, linkToContact(identifier, name), CFSTR("ATutor"), NULL);
+		ABMultiValueAddValueAndLabel(mutableURLs, shortLinkToContact(identifier), CFSTR("ATutor"), NULL);
 		CFRelease(mutableURLs);
 	} else {
 		person = ABPersonCreate();
 		ABRecordSetValue(person, kABPersonFirstNameProperty, name, NULL);
 		
 		ABMutableMultiValueRef urls = ABMultiValueCreateMutable(kABMultiStringPropertyType);
-		ABMultiValueAddValueAndLabel(urls, linkToContact(identifier, name), CFSTR("ATutor"), NULL);
+		ABMultiValueAddValueAndLabel(urls, shortLinkToContact(identifier), CFSTR("ATutor"), NULL);
 		ABRecordSetValue(person, kABPersonURLProperty, urls, NULL);
 		CFRelease(urls);
 		[(id)person autorelease];
