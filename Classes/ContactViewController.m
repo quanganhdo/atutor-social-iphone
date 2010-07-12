@@ -41,14 +41,14 @@
 		} else {
 			mutableURLs = ABMultiValueCreateMutable(kABStringPropertyType);
 		}
-		ABMultiValueAddValueAndLabel(mutableURLs, [NSString stringWithFormat:@"%@/mods/_standard/social/sprofile.php?id=%d", kATutorURL, identifier], CFSTR("ATutor"), NULL);
+		ABMultiValueAddValueAndLabel(mutableURLs, linkToContact(identifier, name), CFSTR("ATutor"), NULL);
 		CFRelease(mutableURLs);
 	} else {
 		person = ABPersonCreate();
 		ABRecordSetValue(person, kABPersonFirstNameProperty, name, NULL);
 		
 		ABMutableMultiValueRef urls = ABMultiValueCreateMutable(kABMultiStringPropertyType);
-		ABMultiValueAddValueAndLabel(urls, [NSString stringWithFormat:@"%@/mods/_standard/social/sprofile.php?id=%d", kATutorURL, identifier], CFSTR("ATutor"), NULL);
+		ABMultiValueAddValueAndLabel(urls, linkToContact(identifier, name), CFSTR("ATutor"), NULL);
 		ABRecordSetValue(person, kABPersonURLProperty, urls, NULL);
 		CFRelease(urls);
 		[(id)person autorelease];
