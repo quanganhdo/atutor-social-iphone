@@ -57,9 +57,12 @@
 			NSString *contact = [NSString stringWithFormat:@"<a href='%@'>%@</a>", 
 								 linkToContact([[entry objectForKey:@"userId"] integerValue], [contactList objectForKey:[entry objectForKey:@"userId"]]), // link
 								 [contactList objectForKey:[entry objectForKey:@"userId"]]]; // name
-			NSString *xhtml = [NSString stringWithFormat:@"%@ %@", 
+			NSString *xhtml = [NSString stringWithFormat:@"%@ - %@ %@", 
+							   niceTimeString([entry objectForKey:@"postedTime"]), // time
 							   contact, // contact
-							   rewriteURLStrings([entry objectForKey:@"title"])]; // title
+							   rewriteURLStrings([entry objectForKey:@"title"]) // title
+							   ];
+			
 			TTStyledText *text = [TTStyledText textFromXHTML:xhtml];
 			
 			[dataSource.items addObject:[TTTableStyledTextItem itemWithText:text URL:nil]];

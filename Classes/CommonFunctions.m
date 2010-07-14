@@ -63,4 +63,14 @@ NSString *rewriteURLStrings(NSString *content) {
 	return retVal;
 }
 
+NSString *niceTimeString(NSString *timeString) {
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+	
+	NSDate *date = [dateFormatter dateFromString:timeString];
+	[dateFormatter setDateStyle:NSDateFormatterShortStyle];
+	
+	return [dateFormatter stringFromDate:date];
+}
+
 @end
