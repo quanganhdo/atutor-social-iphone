@@ -18,7 +18,7 @@
 
 - (id)init {
 	if (self = [super init]) {
-		self.title = @"Activities";
+		self.title = TTLocalizedString(@"Activities", @"");
 		self.autoresizesForKeyboard = YES;
 		self.variableHeightRows = YES;
 		

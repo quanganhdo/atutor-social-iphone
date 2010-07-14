@@ -19,7 +19,7 @@
 
 - (id)init {
 	if (self = [super init]) {
-		self.title = @"Contacts";
+		self.title = TTLocalizedString(@"Contacts", @"");
 		self.autoresizesForKeyboard = YES;
 	}
 	

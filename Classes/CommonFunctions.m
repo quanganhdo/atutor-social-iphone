@@ -14,9 +14,9 @@
 @implementation CommonFunctions
 
 void alertMessage(NSString *title, NSString *message) {
-	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title 
-														message:message 
-													   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:TTLocalizedString(title, @"")
+														message:TTLocalizedString(message, @"")
+													   delegate:nil cancelButtonTitle:TTLocalizedString(@"OK", @"") otherButtonTitles:nil];
 	[alertView show];	
 	[alertView release];
 }
