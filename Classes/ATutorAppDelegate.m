@@ -13,6 +13,7 @@
 #import "ActivitiesViewController.h"
 #import "ContactsViewController.h"
 #import "ContactViewController.h"
+#import "CommonFunctions.h"
 
 @interface ATutorAppDelegate (Private) 
 
@@ -30,6 +31,11 @@
 @synthesize helper;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+	// TODO: Fix issue w/ iOS 4 multitask
+	if (!kATutorURL || !kShindigURL) {
+		alertMessage(@"Setup required", @"Please go to the Settings app to configure your ATutor and Shindig URLs first.");
+	}
+
 	// Set service consumer
 	consumer = [[OSConsumer alloc] init];
 	
@@ -51,7 +57,6 @@
 	
 	return YES;
 }
-
 
 - (void)dealloc {
     [window release];

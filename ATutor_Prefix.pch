@@ -13,5 +13,6 @@
 #define kConsumerKey @"key"
 #define kConsumerSecret @"secret"
 
-#define kATutorURL @"http://localhost:8888/atutor/docs"
-#define kShindigURL @"http://localhost:8888/shindig/php"
+// E.g. @"http://localhost:8888/atutor/docs" & @"http://localhost:8888/shindig/php"
+#define kATutorURL [[NSUserDefaults standardUserDefaults] stringForKey:@"atutorURL"]
+#define kShindigURL [[NSUserDefaults standardUserDefaults] stringForKey:@"shindigURL"] 
