@@ -31,11 +31,6 @@
 @synthesize helper;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-	// TODO: Fix issue w/ iOS 4 multitask
-	if (!kATutorURL || !kShindigURL) {
-		alertMessage(@"Setup required", @"Please go to the Settings app to configure your ATutor and Shindig URLs first.");
-	}
-
 	// Set service consumer
 	consumer = [[OSConsumer alloc] init];
 	
@@ -49,6 +44,9 @@
 	webController.oAuthDelegate = launcher;
 	
 	[self wireUpNavigator];
+	
+	// Home screen
+	[[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"atutor://launcher"]];
 	
 	// Update contact list
 	helper = [[ATutorHelper alloc] initWithConsumer:consumer];

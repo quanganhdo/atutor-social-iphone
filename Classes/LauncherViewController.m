@@ -47,6 +47,10 @@
 												   target:self action:@selector(logout)];
 	
 	self.title = TTLocalizedString(@"ATutor Social", @"");
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
 	self.navigationItem.rightBarButtonItem = [self isLoggedIn] ? logoutButton : nil;
 }
 
@@ -110,8 +114,7 @@
 - (void)didFinishAuthorizationInWebViewController:(QAWebController *)webViewController {
 	[consumer finishAuthProcess];
 	
-	[self.navigationController popViewControllerAnimated:YES];
-	[self.navigationItem setRightBarButtonItem:logoutButton animated:YES];
+	[[(ATutorAppDelegate *)[[UIApplication sharedApplication] delegate] helper] fetchContactList];
 }
 
 #pragma mark -
