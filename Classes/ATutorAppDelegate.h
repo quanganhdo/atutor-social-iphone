@@ -10,15 +10,17 @@
 #import "LauncherViewController.h"
 #import "QAWebController.h"
 #import "ATutorHelper.h"
+#import "IASKAppSettingsViewController.h"
 
 @class OSConsumer;
 
-@interface ATutorAppDelegate : NSObject <UIApplicationDelegate, ATutorHelperDelegate> {
+@interface ATutorAppDelegate : NSObject <UIApplicationDelegate, ATutorHelperDelegate, IASKSettingsDelegate> {
     UIWindow *window;
 	OSConsumer *consumer;
 	LauncherViewController *launcher;
 	QAWebController *webController;
 	ATutorHelper *helper;
+	IASKAppSettingsViewController *settingsViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -26,6 +28,7 @@
 @property (nonatomic, retain) LauncherViewController *launcher;
 @property (nonatomic, retain) TTWebController *webController;
 @property (nonatomic, retain) ATutorHelper *helper;
+@property (nonatomic, retain) IASKAppSettingsViewController *settingsViewController;
 
 @end
 

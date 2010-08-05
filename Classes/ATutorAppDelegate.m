@@ -29,6 +29,7 @@
 @synthesize launcher;
 @synthesize webController;
 @synthesize helper;
+@synthesize settingsViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 	// Set service consumer
@@ -43,15 +44,28 @@
 	webController = [[QAWebController alloc] init];
 	webController.oAuthDelegate = launcher;
 	
+	// Set up settings VC
+	settingsViewController = [[IASKAppSettingsViewController alloc] initWithNibName:@"IASKAppSettingsView" 
+																			 bundle:nil];
+	[settingsViewController setDelegate:self];
+	
+	// Wire things up
 	[self wireUpNavigator];
 	
 	// Home screen
 	[[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"atutor://launcher"]];
 	
-	// Update contact list
+	// Prepare helper
 	helper = [[ATutorHelper alloc] initWithConsumer:consumer];
 	[helper setDelegate:self];
-	[helper fetchContactList];
+	
+	if (![[NSUserDefaults standardUserDefaults] stringForKey:@"atutorURL"]
+		|| ![[NSUserDefaults standardUserDefaults] stringForKey:@"shindigURL"]) {
+		NSLog(@"Settings required");
+		[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:@"atutor://settings"] applyAnimated:YES]];
+	} else {
+		[helper fetchContactList];
+	}
 	
 	return YES;
 }
@@ -62,6 +76,7 @@
 	[launcher release];
 	[webController release];
 	[helper release];
+	[settingsViewController release];
 	
     [super dealloc];
 }
@@ -81,10 +96,21 @@
 	[map from:@"atutor://contacts" toViewController:[ContactsViewController class]];
 	[map from:@"atutor://contact/(initWithId:)" toViewController:[ContactViewController class]];
 	[map from:@"atutor://contact/(initWithId:)/(name:)" toViewController:[ContactViewController class]];
+	[map from:@"atutor://settings" toViewController:settingsViewController];
 }
+
+#pragma mark -
+#pragma mark Helper delegate
 
 - (void)doneFetchingContactList {
 	[[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"atutor://launcher"]];
+}
+
+#pragma mark -
+#pragma mark IASK delegate
+
+- (void)settingsViewControllerDidEnd:(IASKAppSettingsViewController *)sender {
+	NSLog(@"Settings updated");
 }
 
 @end
