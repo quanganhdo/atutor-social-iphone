@@ -105,6 +105,9 @@
 		[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:@"atutor://activities"] applyAnimated:YES]];
 	} else if ([item.title isEqualToString:TTLocalizedString(@"Contacts", @"")]) {
 		[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:@"atutor://contacts"] applyAnimated:YES]];
+	} else if ([item.title isEqualToString:TTLocalizedString(@"Gadgets", @"")]) {
+		[[TTNavigator navigator] openURLs:
+		 [NSString stringWithFormat:@"%@/mods/_standard/social/applications.php", kATutorURL], nil];
 	}
 }
 
