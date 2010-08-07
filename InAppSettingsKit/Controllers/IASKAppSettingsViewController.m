@@ -85,7 +85,7 @@ static NSString *kIASKCredits = @"Powered by InAppSettingsKit"; // Leave this as
         _showCreditsFooter = YES;
         
         // If set to YES, will add a DONE button at the right of the navigation bar
-        _showDoneButton = YES;
+        _showDoneButton = NO;
     }
     return self;
 }
