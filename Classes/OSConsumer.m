@@ -38,9 +38,13 @@
 }
 
 - (id)init {
+	return [self initWithProvider:[OSProvider getATutorProviderWithKey:kConsumerKey withSecret:kConsumerSecret]];
+}
+
+- (id)initWithProvider:(OSProvider *)provider {
 	if (self = [super init]) {
 		self.accessToken = [[[OAToken alloc] initWithKeychainUsingAppName:kATutor tokenType:@"accessToken"] autorelease];
-		self.currentProvider = [OSProvider getATutorProviderWithKey:kConsumerKey withSecret:kConsumerSecret];
+		self.currentProvider = provider;
 		
 		[self setupConsumer];
 	}

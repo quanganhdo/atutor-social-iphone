@@ -21,7 +21,6 @@
 @property (nonatomic, retain) UIBarButtonItem *logoutButton;
 @property (nonatomic, retain) OSConsumer *consumer;
 
-- (id)initWithConsumer:(OSConsumer *)c;
 - (void)restorePages;
 
 @end

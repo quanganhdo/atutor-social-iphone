@@ -27,7 +27,6 @@
 @property (nonatomic, retain) NSMutableArray *contactMapping;
 @property (nonatomic, assign) id<ATutorHelperDelegate> delegate;
 
-- (id)initWithConsumer:(OSConsumer *)csm;
 - (void)fetchContactList;
 - (void)fetchOwnProfile;
 

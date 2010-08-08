@@ -7,6 +7,7 @@
 //
 
 #import "ATutorHelper.h"
+#import "ATutorAppDelegate.h"
 #import "OARequestParameter.h"
 #import "CommonFunctions.h"
 #import "OAServiceTicket.h"
@@ -39,9 +40,9 @@
 	[super dealloc];
 }
 
-- (id)initWithConsumer:(OSConsumer *)csm {
+- (id)init {
 	if (self = [super init]) {
-		self.consumer = csm;
+		self.consumer = [(ATutorAppDelegate *)[[UIApplication sharedApplication] delegate] consumer];
 		self.numberOfContacts = 0;
 		self.contacts = [[NSMutableArray alloc] init];
 		self.contactMapping = [[NSMutableArray alloc] init];

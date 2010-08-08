@@ -9,6 +9,7 @@
 #import "ATutorAppDelegate.h"
 #import "StyleSheet.h"
 #import "OSConsumer.h"
+#import "OSProvider.h"
 
 #import "ActivitiesViewController.h"
 #import "ContactsViewController.h"
@@ -40,7 +41,7 @@
 	[TTDefaultStyleSheet setGlobalStyleSheet:[[[StyleSheet alloc] init] autorelease]];	
 	
 	// Set web controller handler
-	launcher = [[LauncherViewController alloc] initWithConsumer:consumer];
+	launcher = [[LauncherViewController alloc] init];
 	
 	webController = [[QAWebController alloc] init];
 	webController.oAuthDelegate = launcher;
@@ -57,11 +58,10 @@
 	[[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"atutor://launcher"]];
 	
 	// Prepare helper
-	helper = [[ATutorHelper alloc] initWithConsumer:consumer];
+	helper = [[ATutorHelper alloc] init];
 	[helper setDelegate:self];
 	
-	if (![[NSUserDefaults standardUserDefaults] stringForKey:@"atutorURL"]
-		|| ![[NSUserDefaults standardUserDefaults] stringForKey:@"shindigURL"]) {
+	if (!kATutorURL || !kShindigURL) {
 		NSLog(@"Settings required");
 		[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:@"atutor://settings"] applyAnimated:YES]];
 	} else {
@@ -112,7 +112,8 @@
 #pragma mark IASK delegate
 
 - (void)settingsViewControllerDidEnd:(IASKAppSettingsViewController *)sender {
-	NSLog(@"Settings updated");
+	NSLog(@"Settings updated, refresh consumer");
+	consumer.currentProvider = [OSProvider getATutorProviderWithKey:kConsumerKey withSecret:kConsumerSecret];
 }
 
 @end

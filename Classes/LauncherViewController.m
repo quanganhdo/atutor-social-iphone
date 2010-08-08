@@ -23,9 +23,9 @@
 @synthesize logoutButton;
 @synthesize consumer;
 
-- (id)initWithConsumer:(OSConsumer *)c {
+- (id)init {
 	if (self = [super init]) {
-		self.consumer = c;
+		self.consumer = [(ATutorAppDelegate *)[[UIApplication sharedApplication] delegate] consumer];
 	}
 	
 	return self;

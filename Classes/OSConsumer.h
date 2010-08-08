@@ -22,6 +22,7 @@
 @property (nonatomic, retain) OAConsumer *consumer;
 @property (nonatomic, retain) OSProvider *currentProvider;
 
+- (id)initWithProvider:(OSProvider *)provider;
 - (void)getDataForUrl:(NSString *)relativeUrl 
         andParameters:(NSArray*)params 
 			 delegate:(id)delegate 
