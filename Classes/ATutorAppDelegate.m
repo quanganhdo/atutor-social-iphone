@@ -13,6 +13,7 @@
 #import "ActivitiesViewController.h"
 #import "ContactsViewController.h"
 #import "ContactViewController.h"
+#import "GroupsViewController.h"
 #import "CommonFunctions.h"
 
 @interface ATutorAppDelegate (Private) 
@@ -96,6 +97,7 @@
 	[map from:@"atutor://contacts" toViewController:[ContactsViewController class]];
 	[map from:@"atutor://contact/(initWithId:)" toViewController:[ContactViewController class]];
 	[map from:@"atutor://contact/(initWithId:)/(name:)" toViewController:[ContactViewController class]];
+	[map from:@"atutor://groups" toViewController:[GroupsViewController class]];
 	[map from:@"atutor://settings" toViewController:settingsViewController];
 }
 

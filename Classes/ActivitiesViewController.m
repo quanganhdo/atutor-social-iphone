@@ -13,6 +13,11 @@
 #import "NSDictionary_JSONExtensions.h"
 #import "ATutorAppDelegate.h"
 
+@interface LauncherViewController (Private)
+
+- (void)activitiesCallback:(OAServiceTicket *)ticket didFinishWithResponse:(id)response;
+
+@end
 
 @implementation ActivitiesViewController
 

@@ -108,6 +108,8 @@
 	} else if ([item.title isEqualToString:TTLocalizedString(@"Gadgets", @"")]) {
 		[[TTNavigator navigator] openURLs:
 		 [NSString stringWithFormat:@"%@/mods/_standard/social/applications.php", kATutorURL], nil];
+	} else if ([item.title isEqualToString:TTLocalizedString(@"Groups", @"")]) {
+		[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:@"atutor://groups"] applyAnimated:YES]];
 	}
 }
 

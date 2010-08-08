@@ -64,6 +64,7 @@
 		CD90260F11B14DD300519439 /* OSConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90260E11B14DD300519439 /* OSConsumer.m */; };
 		CDA8E3C011BD323500B53FCF /* ActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E3BF11BD323500B53FCF /* ActivitiesViewController.m */; };
 		CDA8E3CE11BD32F500B53FCF /* ATutorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E3CD11BD32F500B53FCF /* ATutorHelper.m */; };
+		CDDEEEB4120F2C240016E33F /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDEEEB3120F2C240016E33F /* GroupsViewController.m */; };
 		CDE2828711ABAB8B00A7F0EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE2828611ABAB8B00A7F0EE /* QuartzCore.framework */; };
 		CDE2832011ABAF5100A7F0EE /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */; };
 		CDE2834811ABB0A500A7F0EE /* StyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE2834711ABB0A500A7F0EE /* StyleSheet.m */; };
@@ -338,6 +339,8 @@
 		CDA8E3BF11BD323500B53FCF /* ActivitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiesViewController.m; sourceTree = "<group>"; };
 		CDA8E3CC11BD32F500B53FCF /* ATutorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATutorHelper.h; sourceTree = "<group>"; };
 		CDA8E3CD11BD32F500B53FCF /* ATutorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATutorHelper.m; sourceTree = "<group>"; };
+		CDDEEEB2120F2C240016E33F /* GroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsViewController.h; sourceTree = "<group>"; };
+		CDDEEEB3120F2C240016E33F /* GroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsViewController.m; sourceTree = "<group>"; };
 		CDE2828611ABAB8B00A7F0EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CDE2831E11ABAF5100A7F0EE /* LauncherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewController.h; sourceTree = "<group>"; };
 		CDE2831F11ABAF5100A7F0EE /* LauncherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewController.m; sourceTree = "<group>"; };
@@ -688,6 +691,15 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		CDDEEEB1120F2C110016E33F /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				CDDEEEB2120F2C240016E33F /* GroupsViewController.h */,
+				CDDEEEB3120F2C240016E33F /* GroupsViewController.m */,
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
 		CDE2822A11ABAB4D00A7F0EE /* three20 */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +721,7 @@
 				CD26D9E111E8D2DB00003274 /* Generic */,
 				CD26D9E011E8D2CE00003274 /* Activities */,
 				CD26D9DF11E8D2C900003274 /* Contacts */,
+				CDDEEEB1120F2C110016E33F /* Groups */,
 			);
 			name = "View Controllers & Stuff";
 			sourceTree = "<group>";
@@ -1062,6 +1075,7 @@
 				CD720C00120B75FC006EC605 /* IASKSlider.m in Sources */,
 				CD720C01120B75FC006EC605 /* IASKSwitch.m in Sources */,
 				CD720C02120B75FC006EC605 /* IASKTextField.m in Sources */,
+				CDDEEEB4120F2C240016E33F /* GroupsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
